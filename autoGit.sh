@@ -3,4 +3,4 @@
 waitFor=${1:-500}
 #this fetches the date
 
-while true; do now=$(date); git pull && git add . && git commit -am "updated on $now" && git push; sleep $waitFor; done
+while true; do now=$(date); git add . && git commit -am "updated at $now" && git pull && git push; sleep $waitFor; done
