@@ -1773,8 +1773,8 @@ del j
 # In[ ]:
 
 
-probMin = cp.Problem(cp.Maximize(-y),constraints[:2000]+obsConstraints + locConstraints)
-probMax = cp.Problem(cp.Maximize(y),constraints[:2000]+obsConstraints + locConstraints)
+probMin = cp.Problem(cp.Maximize(-y),constraints[:10000]+obsConstraints + locConstraints)
+probMax = cp.Problem(cp.Maximize(y),constraints[:10000]+obsConstraints + locConstraints)
 #prob.solve()
 #prob.solve(solver=cp.CVXOPT,verbose=True,**{'':ldl,'refinement':20,'show_progress':True,'feastol':10e-10,'reltol':10e-10,'abstol':10e-10})
 try: 
