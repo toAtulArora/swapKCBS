@@ -3,7 +3,7 @@
 
 # # Libraries
 
-# In[1]:
+# In[213]:
 
 
 import numpy as np
@@ -28,7 +28,7 @@ dill.settings['recurse'] = True
 
 # ## idealFid
 
-# In[2]:
+# In[214]:
 
 
 class idealFid:
@@ -62,7 +62,7 @@ class idealFid:
 
 # ## Extending the braket library to include orthogonality
 
-# In[3]:
+# In[215]:
 
 
 class onStruct:
@@ -93,7 +93,7 @@ class onBra(sq.Bra,onStruct):
         return onKet
 
 
-# In[4]:
+# In[216]:
 
 
 class bKet(sq.Ket):
@@ -297,7 +297,7 @@ sq.represent(a)
 
 # ## Extending the tensor product functionality—tsimp and tdsimp
 
-# In[5]:
+# In[217]:
 
 
 
@@ -392,7 +392,7 @@ def tdsimp(e,pruneMe=True):
 
 # ## Find Coeff was not reliable
 
-# In[6]:
+# In[218]:
 
 
 # depth=0
@@ -438,7 +438,7 @@ def findCoeff(obj,lett):
 
 # ## Prune
 
-# In[7]:
+# In[219]:
 
 
 def prune(expr,thr=10,remNum=False):
@@ -477,7 +477,7 @@ def prune(expr,thr=10,remNum=False):
 
 # ## Power to Mul
 
-# In[8]:
+# In[220]:
 
 
 # From: https://stackoverflow.com/questions/28117770/sympy-multiplications-of-exponential-rather-than-exponential-of-sum
@@ -495,7 +495,7 @@ def pow_to_mul_(expr):
     return expr.subs(repl)
 
 
-# In[9]:
+# In[221]:
 
 
 ## Not very well written
@@ -521,7 +521,7 @@ def pow_to_mul(expr):
             return expr      
 
 
-# In[10]:
+# In[222]:
 
 
 def mul_to_single_mul(expr):
@@ -554,7 +554,7 @@ def mul_to_single_mul(expr):
             return expr          
 
 
-# In[11]:
+# In[223]:
 
 
 def pow_to_single_mul(expr):
@@ -563,7 +563,7 @@ def pow_to_single_mul(expr):
 
 # # Ideal KCBS calculations
 
-# In[12]:
+# In[224]:
 
 
 
@@ -1154,36 +1154,13 @@ class cls_iKCBS:
         
 
 
-# In[13]:
+# In[225]:
 
 
 iKCBS = cls_iKCBS(5,verbose=True) #,test=False,forceCalc=True)
 
 
-# In[99]:
-
-
-# gla=iKCBS.F #_Πs[0] #kp[0]*iKCBS.bp[0] #sq.dagger(iKCBS.ke[0])
-# # with open("F.txt","w") as outf:
-# #     pickle.dump(gla,outf)
-# dill.dump(gla, open("myfile", "wb"))
-
-
-# gla2=dill.load(open("myfile", "rb"))
-
-
-# In[ ]:
-
-
-# display(gla2)
-#print(iKCBS.c)
-#prune(sp.N(sq.qapply(iKCBS.bp[2]*iKCBS.kp[1])))
-
-# display(sq.qapply(iKCBS.F.subs(iKCBS.sqDict)))
-# print(iKCBS.sqDict)
-
-
-# In[14]:
+# In[226]:
 
 
 #display(sp.simplify(iKCBS.F.subs(iKCBS.sqDict)))
@@ -1191,629 +1168,9 @@ display(iKCBS.F.subs(iKCBS.sqDict))
 #The orthogonal relations are imposed later using the graph
 
 
-# ### Debugging the evaluation of fidelity
-# 
-# Eventually, had to convert all the exact coefficients into numbers; else it was taking too long; it is still rather slow actually.
-
-# In[57]:
-
-
-# res=tdsimp(iKCBS.H0)
-# #display(autoDropDim(sq.qapply(res).doit()))
-# display(res)
-
-
-# In[26]:
-
-
-# res2=iKCBS.F2 #powerDrop(iKCBS.F2)
-# powow=iKCBS.F2.args[0]
-# display(powow)
-# print(isinstance(powow,sp.Pow))
-# print(powow.exp)
-# display(sq.qapply(powow.base*powow.base))
-
-# display(powerDrop(iKCBS.F2))
-
-
-# #display(res2)
-
-
-# In[ ]:
-
-
-# res=iKCBS._T_ * iKCBS._U_
-# display(res)
-# display(tsimp(res))
-
-
-# In[ ]:
-
-
-# display(iKCBS._U_)
-
-
-# In[ ]:
-
-
-# display(iKCBS._V_)
-
-
-# In[ ]:
-
-
-# display(iKCBS._T_)
-
-
-# In[ ]:
-
-
-# display(iKCBS.F1)
-
-# display(tsimp(iKCBS.F1))
-#sq.qapply(iKCBS.F1).doit()
-
-
-# In[ ]:
-
-
-
-iKCBS=cls_iKCBS(5)
-
-#sp.init_printing()
-#sp.pprint(iKCBS.c[0])
-for i in range(10):
-    display(iKCBS.c[i])
-    
-
-display(sp.N(iKCBS.matΠs[1]*iKCBS.matΠs[3]))
-display(sp.N(sq.represent(iKCBS.T)))
-display(iKCBS._T)
-#display(sp.N(iKCBS._T_))
-#display(sp.N(iKCBS._U_))
-#display(sp.N(iKCBS._V_))
-display(sp.N(iKCBS.F))
-
-
-# In[ ]:
-
-
-#display(iKCBS._U_)
-
-#display(iKCBS.partial_trace(iKCBS._U_))
-
-
-# In[ ]:
-
-
-g = bKet(0)
-
-Id=sq.IdentityOperator()
-
-display(Id*g)
-
-del Id
-del g
-
-
-# In[249]:
-
-
-g = bKet(0)
-h = bKet(1)
-
-TP=sq.TensorProduct
-zz=TP(g,g)
-zo=TP(g,h)
-oo=TP(h,h)
-oz=TP(h,g)
-
-display(oz)
-
-ρ = 0.5 * oz*sq.Dagger(oz) + 0.4*oo*sq.Dagger(oo) + 0.1*oz*sq.Dagger(oo)
-
-display(ρ)
-
-display(tsimp(sq.Dagger(oz)*ρ*oz))
-
-display(sq.qapply(sq.Dagger(oz)*ρ*oz))
-
-del TP
-
-
-# In[263]:
-
-
-res=0.5 * g + 0.1 * h
-display(res)
-
-display(res.args[0])
-display(res.args[1])
-
-res.has(sq.Ket)
-print(isinstance(res,sp.Add))
-print(isinstance(res,sp.Mul))
-
-res2=res.args[0]
-print(isinstance(res2,sp.Add))
-print(isinstance(res2,sp.Mul))
-
-
-# In[ ]:
-
-
-g = bKet(0)
-h = bKet(1)
-
-TP=sq.TensorProduct
-zz=TP(g,g)
-zo=TP(g,h)
-oo=TP(h,h)
-oz=TP(h,g)
-
-display(oz)
-
-ρ = 0.5 * oz*sq.Dagger(oz) + 0.4*oo*sq.Dagger(oo) + 0.1*oz*sq.Dagger(oo)
-
-display(ρ)
-
-k=TP(sq.IdentityOperator(),h)
-
-
-display(tsimp(sq.Dagger(k)*ρ*k))
-
-display(sq.qapply(sq.Dagger(k)*ρ*k))
-
-del TP
-
-
-# In[ ]:
-
-
-#tsimp=sq.tensorproduct.tensor_product_simp_Mul
-
-#If an inner product evaluates to one, it drops the dimension
-#Works only with products and sums for the moment
-#No sanity checks were done
-#Hopefully, sympy will get updated with this functionality soon anyway
-
-
-
-#def(e):
-    
-
-Identity=sq.IdentityOperator()
-g=bKet(0)
-h=bKet(1)
-
-ρ_g=g*sq.Dagger(g)
-ρ_h=h*sq.Dagger(h)
-
-# #sq.qapply(Identity*g); seems to work
-
-# #display(sq.TensorProduct(ρ_g,ρ_h))
-# print("g")
-# g_=sq.TensorProduct(Identity,g*sq.Dagger(g)); display(g_)
-# print("h")
-# h_=sq.TensorProduct(Identity,h*sq.Dagger(h)); display(h_)
-
-# print("gh")
-# display(sq.Dagger(g_)*h_)
-
-f_=sq.TensorProduct(g,g)
-f__=sq.TensorProduct(h,g)
-
-#sq.qapply(sq.Dagger(f_)*g_*f_).doit()
-
-print("inner product of ")
-display(f_,f__)
-#sq.qapply(sq.Dagger(f_)*f_)
-#sq.tensorproduct.tensor_product_simp(sq.Dagger(f_)*f__ + sq.Dagger(f__)*f__)
-print("yields these two")
-display(sq.Dagger(f_)*f__)
-display(sq.qapply(sq.Dagger(f_)*f__).doit())
-
-print("inner product of ")
-display(f_,f_)
-print("yields these two")
-res1=sq.Dagger(f_)*f_
-display(sq.Dagger(f_)*f_)
-display(sq.qapply(sq.Dagger(f_)*f_).doit())
-
-
-print("Let us try the inner product of these two vectors with the following operator")
-op=f_*sq.Dagger(f_)
-
-display(op)
-print("which yields these two")
-display(sq.qapply(sq.Dagger(f__)*op*f__))
-display(sq.qapply(sq.Dagger(f__)*op*f__).doit())
-#sq.qapply(sq.Dagger(f_)*h_*sq.Dagger(f__)).doit()
-
-
-######So far it works well
-print("Consider now the tensor product of two operators")
-ρ=sq.TensorProduct(ρ_g,ρ_g)
-display(ρ)
-print("Their inner product with the ket") 
-display(f_)
-print("yields the following two")
-res=sq.qapply(sq.Dagger(f_)*ρ*f_)
-display(res)
-display(res.doit())
-
-display(tsimp(res))
-print("Testing if the constituents are still instances of orthogonal vectors")
-print(isinstance(res.args[0].args[0],bBra))
-display(res.args[0].args[0],res.args[1])
-
-print("Testing if the constituents are ... same for the original")
-print(isinstance(res1.args[0].args[0],bBra))
-display(res1.args[0].args[0],res1.args[1])
-
-#sq.qapply(sq.Dagger(g_)*h_).doit() #*ρ_g
-
-#sq.qapply(sq.Dagger(g)*h).doit()
-print("Now we try with this ")
-ρ2=sq.TensorProduct(ρ_g,ρ_h)
-σ=3*ρ
-display(σ)
-res2=tsimp(sq.qapply(sq.Dagger(f_)*σ*f_))
-display(res2)
-
-#res2.has(sq.TensorProduct)
-#isinstance(res2,sq.TensorProduct)
-#new_args=list(sq.TensorP)
-#sq.TensorProduct(*list(res2.args))
-
-
-# res3=autoDropDim(res2)
-# # for _ in res3.args:
-# #     display(_)
-
-# display(res3)
-
-
-# In[ ]:
-
-
-
-
-def tensor_product_simp(e, **hints):
-    """Try to simplify and combine TensorProducts.
-
-    """
-    if isinstance(e, sp.Add):
-        return sp.Add(*[tensor_product_simp(arg) for arg in e.args])
-    elif isinstance(e, sp.Mul):
-        return tensor_product_simp_Mul(e)
-    else:
-        return e
-    
-def tensor_product_simp_Mul(e):
-    """Simplify a Mul with TensorProducts.
-
-        >>> e
-        AxB*CxD
-        >>> tensor_product_simp_Mul(e)
-        (A*C)x(B*D)
-
-    """
-    
-    # TODO: This won't work with Muls that have other composites of
-    # TensorProducts, like an Add, Commutator, etc.
-    # TODO: This only works for the equivalent of single Qbit gates.
-    
-    if not isinstance(e, sp.Mul):
-        return e
-    c_part, nc_part = e.args_cnc()
-    n_nc = len(nc_part)
-    if n_nc == 0:
-        return e
-#     elif n_nc == 1:
-#         if isinstance(nc_part[0], Pow):
-#             return  Mul(*c_part) * tensor_product_simp_Pow(nc_part[0])
-#         return e
-    elif e.has(sq.TensorProduct):
-        current = nc_part[0] #I guess this is the 
-#         if not isinstance(current, sq.TensorProduct):
-#             if isinstance(current, Pow):
-#                 if isinstance(current.base, sq.TensorProduct):
-#                     current = tensor_product_simp_Pow(current)
-#             else:
-#                 raise TypeError('TensorProduct expected, got: %r' % current)
-        n_terms = len(current.args)
-        new_args = list(current.args)
-        for next in nc_part[1:]:
-            # TODO: check the hilbert spaces of next and current here.
-            if isinstance(next, sq.TensorProduct):
-                if n_terms != len(next.args):
-                    raise QuantumError(
-                        'TensorProducts of different lengths: %r and %r' %
-                        (current, next)
-                    )
-                for i in range(len(new_args)):
-                    new_args[i] = new_args[i] * next.args[i]
-#             else:
-#                 if isinstance(next, Pow):
-#                     if isinstance(next.base, sq.TensorProduct):
-#                         new_tp = tensor_product_simp_Pow(next)
-#                         for i in range(len(new_args)):
-#                             if( new_args[i] )
-#                             new_args[i] = new_args[i] * new_tp.args[i]
-#                     else:
-#                         raise TypeError('TensorProduct expected, got: %r' % next)
-#                 else:
-#                     raise TypeError('TensorProduct expected, got: %r' % next)
-            current = next
-        return Mul(*c_part) * sq.TensorProduct(*new_args)
-    elif e.has(Pow):
-        new_args = [ tensor_product_simp_Pow(nc) for nc in nc_part ]
-        return tensor_product_simp_Mul(Mul(*c_part) * sq.TensorProduct(*new_args))
-    else:
-        return e
-
-
-# In[ ]:
-
-
-glaba=sp.Integer(1)
-#isinstance(glaba,sp.number)
-#type(glaba)
-go=bKet(2)
-
-
-# ### Debugging the issue with substitutions
-
-# In[ ]:
-
-
-
-# iKCBS.b[1].subs({iKCBS.a[8]:0})
-
-# iKCBS.c
-#b=sp.symbols('b0:%d'%10)
-#b[0].subs(b[0],10)
-# gla=sp.Symbol('x'); gla
-# gla.subs(gla,10)
-
-#iKCBS.a[8].subs(iKCBS.a[8],0)
-
-
-# In[ ]:
-
-
-ket1=bKet(0)
-ket2=bKet(1)
-kets=(ket1,ket2)
-bra=[sq.Dagger(iket) for iket in kets]; bra
-
-
-# ### Debugging the issue with _eval_args
-
-# In[ ]:
-
-
-class cls_iKCBS:    
-    
-    def __init__(s,n):
-        cls_iKCBS.n=n
-        #j in 0,1,2,3,4
-        s.ke = [bKet(j) for j in range(3)]    
-        s.br = [sq.Dagger(s.ke[j]) for j in range(3)]
-        s.πs = []
-        s.matπs = [] 
-        #poor man's implementation
-        for j in range(5):
-            s.πs.append(s.proj(j,n))            
-            s.matπs.append(s.matRep(s.proj(j,n)))
-        s.opT = s.ke[0]*s.br[2] + s.ke[1]*s.br[0] + s.ke[2]*s.br[1]
-        s.matT=s.matRep(s.opT)
-
-    #this method is now obsolete    
-    def matRep(s,op):
-        n=3 #s.__class__.n
-        matop = sp.Matrix(np.zeros((n,n)))        
-        for i in range(n):
-            for j in range(n):
-                matop[i,j] = sq.qapply(sq.Dagger(s.ke[i])*op*s.ke[j]).doit() 
-        return matop
-        
-    def proj(s,j,n):
-        N=sp.Integer(n)
-        J=sp.Integer(j)
-        #print(N,j)
-        one=sp.Integer(1)
-        #print(one)
-        α1=sp.cos((sp.pi)/N)/(one+sp.cos(sp.pi/N)) #verified
-        #a1=sp.cos(sp.pi/N)
-        #
-        #print(α1)
-        
-        α2=one-α1 #verified
-        α3=J * sp.pi * (N-one)/N #verified
-        
-        vec = sp.sqrt(α1)*s.ke[0] + sp.sqrt(α2)*sp.sin(α3)*s.ke[1] + sp.sqrt(α2)*sp.cos(α3)*s.ke[2]
-        
-        projector = vec*sq.Dagger(vec)
-           
-        #matrixprojector = sp.Matrix([0,0])
-        return projector
-    
-    
-    def find_coeff_matT(s):
-        cls=s.__class__
-        a=sp.symbols('a0:%d'%(cls.n*2))
-        LHS=a[0]*s.matπs[0]
-        for i in range(1,cls.n):
-            LHS=LHS+a[i]*s.matπs[i]
-        for i in range(cls.n,2*cls.n):
-            LHS=LHS+a[i]*s.matπs[i%cls.n]*s.matπs[(i+2)%cls.n]
-            
-        RHS=s.matT
-        return sp.solve(sp.N(LHS-RHS),a)
-        #return sp.solve(a[0]-a[2],a)
-        
-        #print(LHS)
-        #for i in range
-        
-
-    '''
-       def vec(self,j,n):    
-           N=sp.Integer(n)
-           J=sp.Integer(j)
-           #print(N,j)
-           one=sp.Integer(1)
-           #print(one)
-           α1=sp.cos((sp.pi)/N)/(one+sp.cos(sp.pi/N)) #verified
-           #a1=sp.cos(sp.pi/N)
-           #
-           #print(α1)
-        
-           α2=one-α1 #verified
-           α3=J * sp.pi * (N-one)/N #verified
-        
-           vec = sp.sqrt(α1)*self.k0 + sp.sqrt(α2)*sp.sin(α3)*self.k1 + sp.sqrt(α2)*sp.cos(α3)*self.k2
-        
-           #projector = vec*sq.Dagger(vec)
-           return vec
-    '''
-
-
-# In[ ]:
-
-
-
-iKCBS=cls_iKCBS(5)
-#to access the vectors 
-
-# #uncomment to test
-# sq.qapply(sq.qapply(iKCBS.πs[0]*iKCBS.πs[1]))
-# #iKCBS.πs[1]
-
-# sp.N(iKCBS.matπs[2])
-
-# iKCBS.find_coeff_matT()
-
-
-# In[ ]:
-
-
-# iKCBS.find_coeff_opT()
-
-
-# ### Debugging
-
-# In[ ]:
-
-
-sq.qapply(sq.Dagger(iKCBS.πs[0])*iKCBS.πs[1]);
-
-#sq.represent(sq.qapply(sq.Dagger(iKCBS.πs[0])*iKCBS.πs[1]),basis=iKCBS.ke)
-
-
-# In[ ]:
-
-
-#older version without lists
-class cls_iKCBS:
-    k0=bKet(0)    
-    k1=bKet(1)
-    k2=bKet(2)
-    
-    b0=sq.Dagger(k0)
-    b1=sq.Dagger(k1)
-    b2=sq.Dagger(k2)
-    
-    πs=[]
-    
-    def __init__(self,n):
-        #j in 0,1,2,3,4
-        for j in range(5):
-            self.πs.append(self.proj(j,n))
-    
-    def proj(self,j,n):
-        N=sp.Integer(n)
-        J=sp.Integer(j)
-        #print(N,j)
-        one=sp.Integer(1)
-        #print(one)
-        α1=sp.cos((sp.pi)/N)/(one+sp.cos(sp.pi/N)) #verified
-        #a1=sp.cos(sp.pi/N)
-        #
-        #print(α1)
-        
-        α2=one-α1 #verified
-        α3=J * sp.pi * (N-one)/N #verified
-        
-        vec = sp.sqrt(α1)*self.k0 + sp.sqrt(α2)*sp.sin(α3)*self.k1 + sp.sqrt(α2)*sp.cos(α3)*self.k2
-        
-        projector = vec*sq.Dagger(vec)
-        return projector
-    '''
-       def vec(self,j,n):    
-           N=sp.Integer(n)
-           J=sp.Integer(j)
-           #print(N,j)
-           one=sp.Integer(1)
-           #print(one)
-           α1=sp.cos((sp.pi)/N)/(one+sp.cos(sp.pi/N)) #verified
-           #a1=sp.cos(sp.pi/N)
-           #
-           #print(α1)
-        
-           α2=one-α1 #verified
-           α3=J * sp.pi * (N-one)/N #verified
-        
-           vec = sp.sqrt(α1)*self.k0 + sp.sqrt(α2)*sp.sin(α3)*self.k1 + sp.sqrt(α2)*sp.cos(α3)*self.k2
-        
-           #projector = vec*sq.Dagger(vec)
-           return vec
-    '''
-
-
-# In[ ]:
-
-
-iKCBS=cls_iKCBS()
-sq.qapply(iKCBS.proj(1,5)).doit();
-
-
-# In[ ]:
-
-
-sp.simplify(sq.qapply(sq.Dagger(iKCBS.k0)*iKCBS.proj(1,5)*iKCBS.proj(2,5)*iKCBS.k0).doit())
-#sp.N(sq.qapply(sq.Dagger(iKCBS.k0)*iKCBS.proj(1,5)*iKCBS.proj(2,5)*iKCBS.k0).doit())
-#sq.qapply(iKCBS.proj(1,5)*iKCBS.proj(2,5)).doit()
-
-
-# In[ ]:
-
-
-(sq.Dagger(iKCBS.k0)*iKCBS.k0).doit()
-
-
-# In[ ]:
-
-
-sp.N(sq.qapply(sq.Dagger(iKCBS.vec(1,5))*iKCBS.vec(1,5)).doit(),5000)
-
-
-# In[ ]:
-
-
-sp.N(sp.simplify(sq.qapply(sq.Dagger(iKCBS.vec(4,5))*iKCBS.vec(3,5)).doit()))
-
-
-# In[ ]:
-
-
-sp.N(sq.qapply(sq.Dagger(iKCBS.πs[0])*iKCBS.πs[1]))
-
-
 # # SDP part (SymPy meets CvxPy)
 
-# In[15]:
+# In[227]:
 
 
 N=5
@@ -1830,7 +1187,7 @@ B=[sp.symbols('P',commutative=False),sp.symbols('Pd',commutative=False)]
 print(B)
 
 
-# In[16]:
+# In[228]:
 
 
 objective = iKCBS.F
@@ -1844,7 +1201,7 @@ objective = iKCBS.F
 #display(objective);
 
 
-# In[17]:
+# In[229]:
 
 
 hDepth = 3 #depth of the heirarchy; depends on the number of Πs in the expression for Fidelity
@@ -1883,23 +1240,7 @@ sqDicts[B[1]*B[0]]=sp.Integer(1)
 #print(L)
 
 
-# In[143]:
-
-
-# expr=A[2]*A[0]*A[0] + A[1]*A[1]
-# display(expr)
-
-# #sp.expand(expr).args
-# #expr.expand(power_exp=False).args
-# #pow_to_mul(expr).args[1].args[1].args #.args[0].args
-
-# pow_to_mul(expr)
-
-# mul_to_single_mul(pow_to_mul(expr))
-# #pow_to_mul(expr).expand(mul=False).args[1]
-
-
-# In[18]:
+# In[230]:
 
 
 G = nx.Graph()
@@ -1922,7 +1263,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 nx.draw(G, with_labels=True)
 
 
-# In[19]:
+# In[231]:
 
 
 #Simplify objective using the orthogonality relations of the graph
@@ -1931,7 +1272,7 @@ objective_ = sp.expand(prune(objective).subs(gDicts)).subs(gDicts).subs(sqDicts)
 display(objective_)
 
 
-# In[20]:
+# In[232]:
 
 
 Lx=[]
@@ -1964,7 +1305,7 @@ print(L1)
 display(Lx)
 
 
-# In[21]:
+# In[233]:
 
 
 #symbol to index dictionary
@@ -1976,54 +1317,15 @@ for i in range(len(L)):
 #print(sTi)
 
 
-# In[22]:
+# In[234]:
 
 
 print(Lx)
 
 
-# In[ ]:
-
-
-#I was trying to directly substitute the matrices corresponding to these using represent but it doesn't seem to work well with non-commutative symbols and matrices
-
-# for i in range(len(A)):
-#     dictRep[A[i]]=sp.N(iKCBS.matΠs[i])
-
-#print(dictRep)
-test=A[0]*12+A[1]*13
-objective_.subs(dictRep)
-
-#X=[] #list(sp.MatrixSymbol('X_0:%d'%N,3,3))
-X=[sp.MatrixSymbol('X0',3,3)]
-X.append(sp.MatrixSymbol('X1',3,3))
-X.append(sp.MatrixSymbol('X2',3,3))
-X.append(sp.MatrixSymbol('X3',3,3))
-X.append(sp.MatrixSymbol('X4',3,3))
-
-# x1 = MatrixSymbol('x1', 3, 3)
-# x2 = MatrixSymbol('x2', 3, 3)
-dictMatSymbols={A[i]:X[i] for i in range(5)}
-
-objective_2= objective_.subs(dictMatSymbols)
-print(objective_2)
-
-testExp=A[0]*A[1]
-display(testExp)
-display(testExp.subs(dictMatSymbols))
-
-
-sp.N(iKCBS.matΠs[0])
-
-dictRep={X[0]:sp.N(iKCBS.matΠs[0])}
-
-objective_3 = objective_2.subs(dictRep)
-print(objective_3)
-
-
 # ## Sympy says hello to Cvxpy
 
-# In[27]:
+# In[235]:
 
 
 ForceCalc=False
@@ -2398,7 +1700,7 @@ lM = cp.bmat(M) #this converts the list M into a matrix which can be used to imp
 locConstraints = [lM >> 0]
 
 
-# In[29]:
+# In[236]:
 
 
 #######################Constraints from the observations
@@ -2414,7 +1716,7 @@ for l1 in L1[:4]:
 del j
 
 
-# In[ ]:
+# In[237]:
 
 
 probMin = cp.Problem(cp.Maximize(-y),constraints[:2000]+obsConstraints + locConstraints)
@@ -2431,8 +1733,8 @@ except:
     print("min:ba")
 
 
-# In[164]:
+# In[238]:
 
 
-import cvxopt as co
+#import cvxopt as co
 
