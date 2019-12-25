@@ -11,7 +11,7 @@ import sympy as sp
 import sympy.physics.quantum as sq
 import sympy.physics.quantum.qubit as sqq
 import sympy.physics.quantum.gate as sqg
-
+import mosek
 import cvxpy as cp
 
 import matplotlib.pyplot as plt
@@ -1776,15 +1776,15 @@ del j
 probMin = cp.Problem(cp.Maximize(-y),constraints+obsConstraints + locConstraints)
 probMax = cp.Problem(cp.Maximize(y),constraints+obsConstraints + locConstraints)
 #prob.solve()
-#prob.solve(solver=cp.CVXOPT,verbose=True,**{'':ldl,'refinement':20,'show_progress':True,'feastol':10e-10,'reltol':10e-10,'abstol':10e-10})
-try: 
-    print("max:",probMax.solve(verbose=True))
-except:
-    print("max:gla")
-try:
-    print("min:",-probMin.solve(verbose=True))
-except:
-    print("min:ba")
+probMin.solve(solver=cp.MOSEK,verbose=True)
+# try: 
+#     print("max:",probMax.solve(solver=mosek, verbose=True))
+# except:
+#     print("max:gla")
+# try:
+#     print("min:",-probMin.solve(solver=mosek, verbose=True))
+# except:
+#     print("min:ba")
 
 
 # In[238]:
