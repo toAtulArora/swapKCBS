@@ -1382,7 +1382,7 @@ def lettersForExpr(termInSum):
 
 
 ForceCalc=False
-fileName="lSave_2"
+fileName="lSave_3"
 
 flags=["issues"]
 
@@ -1793,11 +1793,11 @@ probMax = cp.Problem(cp.Maximize(y),constraints[:2000]+obsConstraints + locConst
 #prob.solve()
 #prob.solve(solver=cp.CVXOPT,verbose=True,**{'':ldl,'refinement':20,'show_progress':True,'feastol':10e-10,'reltol':10e-10,'abstol':10e-10})
 try: 
-    print("max:",probMax.solve(verbose=True))
+    print("max:",probMax.solve(solver = cp.CVXOPT, verbose=True))
 except:
     print("max:gla")
 try:
-    print("min:",-probMin.solve(verbose=True))
+    print("min:",-probMin.solve(solver = cp.CVXOPT,verbose=True))
 except:
     print("min:ba")
 
