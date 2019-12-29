@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass amsart
+\textclass article
 \use_default_options true
 \begin_modules
 theorems-ams
@@ -82,7 +82,193 @@ figs-within-sections
 
 \begin_body
 
+\begin_layout Title
+Local and Robust Self testing using trapped ions
+\end_layout
+
+\begin_layout Author
+Xiaomin etc.., Atul Singh Arora, Kishor Bharti, Kwek Leong Chuan
+\end_layout
+
+\begin_layout Abstract
+We provide experimental implementation of KCBS self-testing scheme.
+ Theoretical tools are supplemented to render the results in 
+\shape italic
+Physical Review Letters 122 (25), 250403 
+\shape default
+practical.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Section
+Experimental results
+\end_layout
+
 \begin_layout Standard
+The experimental implementation corresponding to the work in ref 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+ was carried on.
+\end_layout
+
+\begin_layout Section
+Theoretical Analysis
+\end_layout
+
+\begin_layout Standard
+The goal is to provide a lower bound on fidelity for the experimental results
+ in section 2.
+ The following steps are required:
+\end_layout
+
+\begin_layout Subsection
+Regularizing the experimental statistics
+\end_layout
+
+\begin_layout Standard
+In reference 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+, authors assume that the measurement operators follow cyclic compatibility
+ structure.
+ However, this need not be true in the real life experimental scenario.
+ Thus, the experimental data may not belong to quantum set due to finite
+ statistics and violation of the cyclic compatibility structure.
+ This demands a regularization of the experimental data for the theoretical
+ analysis.
+ Here, regularization means finding the statistics which is closest to our
+ experimental statistics and belongs to the quantum set.
+ We can regularize the experimental data using semi denite programming.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $P_{e}$
+\end_inset
+
+ be the vector of probabilities obtained for probability of getting outcome
+ 1 for 
+\begin_inset Formula $n-$
+\end_inset
+
+cycle scenario.
+ Further, let
+\end_layout
+
+\begin_layout Subsection
+Providing a lower bound on the fidelity from regularized measurement statistics
+\end_layout
+
+\begin_layout Subsubsection
+Constructing the isometry
+\end_layout
+
+\begin_layout Standard
+A swap circuit between two qudit registers is given by 
+\begin_inset Formula $S=TUVU$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\mathbb{I}\otimes\sum_{k}\vert-k\rangle\langle k\vert
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\sum_{k=0}^{d-1}P^{k}\otimes\vert k\rangle\langle k\vert
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\sum_{k=0}^{d-1}\vert k\rangle\langle k\vert\otimes P^{-k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P=\sum_{k=0}^{d-1}\vert k+1\rangle\langle k\vert.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $P$
+\end_inset
+
+ is a translation operator.
+\end_layout
+
+\begin_layout Standard
+TUVU, Localizing matrix etc....
+\end_layout
+
+\begin_layout Subsubsection
+Deriving the expression for fidelity
+\end_layout
+
+\begin_layout Subsubsection
+Providing the lower bound on fidelity
+\end_layout
+
+\begin_layout Standard
+NPA analoge for theta body
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "theta_number"
+options "plain"
+
+\end_inset
+
 
 \end_layout
 
