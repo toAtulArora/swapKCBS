@@ -249,6 +249,44 @@ Deriving the expression for fidelity
 \end_layout
 
 \begin_layout Standard
+Let 
+\begin_inset Formula $\left\{ \left\{ \bar{\Pi_{i}}\right\} _{i\in V},\vert\bar{\psi}\rangle\right\} $
+\end_inset
+
+ be the ideal configuration and 
+\begin_inset Formula $\left\{ \left\{ \Pi_{i}\right\} ,\vert\psi\rangle\right\} $
+\end_inset
+
+ be the candidate configuration.
+ Our expression for the fidelity for the aforementioned configurations is
+ given by
+\begin_inset Formula 
+\[
+F\left(\alpha,\beta\right)=\alpha\sum_{i\in V}\langle\bar{\psi\vert}\bar{\Pi_{i}}\Pi_{i}\vert\psi\rangle+\beta\langle\bar{\psi\vert}\psi\rangle,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+\begin_inset Formula $\beta\in$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The total fidelity for state and projectors for odd 
+\begin_inset Formula $n$
+\end_inset
+
+-cycle scenario in the ideal case is 
+\begin_inset Formula $n+1.$
+\end_inset
+
 
 \end_layout
 
