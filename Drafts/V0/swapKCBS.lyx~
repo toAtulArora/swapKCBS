@@ -37,7 +37,7 @@ figs-within-sections
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -62,6 +62,8 @@ figs-within-sections
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1cm
+\rightmargin 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -101,6 +103,138 @@ practical.
 
 \begin_layout Section
 Introduction
+\end_layout
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Section
+Verifying the assumptions experimentally
+\end_layout
+
+\begin_layout Standard
+The self-testing results in reference
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+ hinges on three assumptions:
+\end_layout
+
+\begin_layout Enumerate
+The measurements are 
+\begin_inset Quotes eld
+\end_inset
+
+sharp
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Sharp measurements are outcome-repeatable and minimally disturbing.
+\end_layout
+
+\begin_layout Enumerate
+The measurements follow the compatibility relation according to an odd cycle
+ graph.
+\end_layout
+
+\begin_layout Enumerate
+The black box has no more memory than its information-carrying capacity.
+ Each box is used once, and there is an unlimited supply of them.
+\end_layout
+
+\begin_layout Standard
+In the experiments, we verify sharpness (assumption 1) and compatibility
+ (assumption 2) based on the techniques in reference
+\begin_inset CommandInset citation
+LatexCommand cite
+key "leupold2018sustained"
+literal "false"
+
+\end_inset
+
+.
+ To quantify sharpness of an observable 
+\begin_inset Formula $A_{\mu}$
+\end_inset
+
+, it is instructive to quantify the probability of getting the same outcome
+ corresponding to two consecutive measurements of the same measurement i.e.
+ 
+\begin_inset Formula $A_{\mu}.$
+\end_inset
+
+ The appropriate mathematical expression for the same could be given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{\mu}=\frac{\sum_{a_{1}}N\left(A_{\mu}=a_{1},A_{\mu}=a_{1}\right)}{N\left(A_{\mu},A_{\mu}\right)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $N(.)$
+\end_inset
+
+quantifies the number of instances corresponding to the expression inside
+ its following bracket.
+ Coming back to assumption 2, the necessary conditions for compatibility
+ are the absence of context-signalling as well as lack of influence of a
+ precedding compatible measurement on the statistics of an observable.
+ The forward context-signalling is quantified by
+\begin_inset Formula 
+\begin{equation}
+S_{u,v,w;i}^{f}=\frac{N_{i}\left(A_{\nu},A_{u}=a_{1}\right)}{N_{i}\left(A_{\nu},A_{u}\right)}-\frac{N_{i}\left(A_{w},A_{u}=a_{1}\right)}{N_{i}\left(A_{w},A_{u}\right)},\label{eq:SigF}
+\end{equation}
+
+\end_inset
+
+whereas the backward context-signalling is given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S_{u,v,w;i}^{b}=\frac{N_{i}\left(A_{u}=a_{1},A_{\nu}\right)}{N_{i}\left(A_{\nu},A_{u}\right)}-\frac{N_{i}\left(A=a_{1},A_{w}\right)}{N_{i}\left(A_{w},A_{u}\right)}.\label{eq:SigB}
+\end{equation}
+
+\end_inset
+
+It is worth mentioning that the expressions for the forward and backward
+ context-signalling are defined for some fixed input state 
+\begin_inset Formula $i.$
+\end_inset
+
+ In case of no-context signalling, the value of both the expressions 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SigB"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SigF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is zero.
+ We 
 \end_layout
 
 \begin_layout Section
@@ -249,6 +383,44 @@ Deriving the expression for fidelity
 \end_layout
 
 \begin_layout Standard
+Let 
+\begin_inset Formula $\left\{ \left\{ \bar{\Pi_{i}}\right\} _{i\in V},\vert\bar{\psi}\rangle\right\} $
+\end_inset
+
+ be the ideal configuration and 
+\begin_inset Formula $\left\{ \left\{ \Pi_{i}\right\} ,\vert\psi\rangle\right\} $
+\end_inset
+
+ be the candidate configuration.
+ Our expression for the fidelity for the aforementioned configurations is
+ given by
+\begin_inset Formula 
+\[
+F\left(\alpha,\beta\right)=\alpha\sum_{i\in V}\langle\bar{\psi\vert}\bar{\Pi_{i}}\Pi_{i}\vert\psi\rangle+\beta\langle\bar{\psi\vert}\psi\rangle,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+\begin_inset Formula $\beta\in\mathbb{R}$
+\end_inset
+
+ and are weights on fidelitiy for states and measured states respectively.
+\end_layout
+
+\begin_layout Standard
+The total fidelity for state and projectors for odd 
+\begin_inset Formula $n$
+\end_inset
+
+-cycle scenario in the ideal case is 
+\begin_inset Formula $n+1.$
+\end_inset
+
 
 \end_layout
 
