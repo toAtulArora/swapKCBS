@@ -2217,7 +2217,7 @@ def solve(obsData=None):
 # In[ ]:
 
 
-globalSettings({'cacheFolder':'cached_2/','N':7,'solverSettings':{'verbose':True,'solver':cp.MOSEK}})
+globalSettings({'cacheFolder':'cached_2/','N':7}) #,'solverSettings':{'verbose':True,'solver':cp.MOSEK}})
 init()
 solve()
 
