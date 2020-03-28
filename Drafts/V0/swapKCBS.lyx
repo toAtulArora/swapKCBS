@@ -192,7 +192,7 @@ where
 \begin_inset Formula $N(.)$
 \end_inset
 
-quantifies the number of instances corresponding to the expression inside
+ quantifies the number of instances corresponding to the expression inside
  its following bracket.
  Coming back to assumption 2, the necessary conditions for compatibility
  are the absence of context-signalling as well as lack of influence of a
@@ -294,7 +294,8 @@ literal "false"
  analysis.
  Here, regularization means finding the statistics which is closest to our
  experimental statistics and belongs to the quantum set.
- The
+ The set of quantum behaviours forms a convex set, known as theta body.
+ 
 \end_layout
 
 \begin_layout Subsection
