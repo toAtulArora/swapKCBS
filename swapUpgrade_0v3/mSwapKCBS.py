@@ -2071,46 +2071,46 @@ def init_observedConstraints():
 
 
 def init_SDP():
-global N,I,A,B,L1,G,gDicts,objective_,Lx,L,L_,sTi,sTr,sTc,Lloc,X,X1,constraints,locConstraints,y,obsConstraints,data
-global probMax,probMin
+    global N,I,A,B,L1,G,gDicts,objective_,Lx,L,L_,sTi,sTr,sTc,Lloc,X,X1,constraints,locConstraints,y,obsConstraints,data
+    global probMax,probMin
 
-#Possible solvers 
-#MOSEK needs a license; will set it up later 
+    #Possible solvers 
+    #MOSEK needs a license; will set it up later 
 
-#SCS 
-#CVXOPT 
-#MOSEK 
+    #SCS 
+    #CVXOPT 
+    #MOSEK 
 
-verbose=True 
-currentConstraints = [] 
-
-
-if(gls['testType']==0 or gls['testType']==2):    
-    if(gls['usePs']==True):
-        currentConstraints += locConstraints
-    currentConstraints += constraints+obsConstraints 
-    #currentConstraints+=obsConstraints
-
-elif(gls['testType']==1):
-    currentConstraints = constraints
-    if(gls['testSubType']=="b" or gls['testSubType']=="c" or gls['testSubType']=="d"        or gls['testSubType']=="f" or gls['testSubType']=="a2" or gls['testSubType']=="e" or gls['testSubType']=="ks"):
-        #y=0
-        currentConstraints += obsConstraints
-    if(gls['testSubType']=="c"): # or testSubType=="d"):
-        currentConstraints += locConstraints
-        if(gls['usePs']==False):
-            print("WARNING: Ps are off while the test needs Ps!")
+    verbose=True 
+    currentConstraints = [] 
 
 
-probMax = cp.Problem(cp.Maximize(y),currentConstraints)
-probMin = cp.Problem(cp.Maximize(-y),currentConstraints)
+    if(gls['testType']==0 or gls['testType']==2):    
+        if(gls['usePs']==True):
+            currentConstraints += locConstraints
+        currentConstraints += constraints+obsConstraints 
+        #currentConstraints+=obsConstraints
 
-# probMax = cp.Problem(cp.Maximize(0),currentConstraints)
-# probMin = cp.Problem(cp.Maximize(-0),currentConstraints)
+    elif(gls['testType']==1):
+        currentConstraints = constraints
+        if(gls['testSubType']=="b" or gls['testSubType']=="c" or gls['testSubType']=="d"        or gls['testSubType']=="f" or gls['testSubType']=="a2" or gls['testSubType']=="e" or gls['testSubType']=="ks"):
+            #y=0
+            currentConstraints += obsConstraints
+        if(gls['testSubType']=="c"): # or testSubType=="d"):
+            currentConstraints += locConstraints
+            if(gls['usePs']==False):
+                print("WARNING: Ps are off while the test needs Ps!")
 
 
-# 
-# ## Solve
+    probMax = cp.Problem(cp.Maximize(y),currentConstraints)
+    probMin = cp.Problem(cp.Maximize(-y),currentConstraints)
+
+    # probMax = cp.Problem(cp.Maximize(0),currentConstraints)
+    # probMin = cp.Problem(cp.Maximize(-0),currentConstraints)
+
+
+    # 
+    # ## Solve
 
 # In[31]:
 
