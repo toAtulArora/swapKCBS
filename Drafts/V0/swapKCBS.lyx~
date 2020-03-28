@@ -89,7 +89,7 @@ Local and Robust Self testing using trapped ions
 \end_layout
 
 \begin_layout Author
-Xiaomin etc.., Atul Singh Arora, Kishor Bharti, Kwek Leong Chuan
+Xiaomin etc.., Atul Singh Arora, Kishor Bharti, Adan Cabello, Kwek Leong Chuan
 \end_layout
 
 \begin_layout Abstract
@@ -109,7 +109,15 @@ Introduction
 Background
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
+Exclusivity graph approach to contextuality
+\end_layout
+
+\begin_layout Subsection
+Robust self-testing
+\end_layout
+
+\begin_layout Subsection
 Verifying the assumptions experimentally
 \end_layout
 
@@ -234,7 +242,8 @@ noprefix "false"
 \end_inset
 
  is zero.
- We 
+ Regarding assumption 3, we haven't closed the memory loop-hole.
+ (TODO: Add the compatibility check via contextuality-by-default approach)
 \end_layout
 
 \begin_layout Section
@@ -285,21 +294,7 @@ literal "false"
  analysis.
  Here, regularization means finding the statistics which is closest to our
  experimental statistics and belongs to the quantum set.
- We can regularize the experimental data using semi denite programming.
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $P_{e}$
-\end_inset
-
- be the vector of probabilities obtained for probability of getting outcome
- 1 for 
-\begin_inset Formula $n-$
-\end_inset
-
-cycle scenario.
- Further, let
+ The
 \end_layout
 
 \begin_layout Subsection
