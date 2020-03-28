@@ -1426,7 +1426,7 @@ def init_SC_3():
                 gDicts.update({l1*l2:sp.Integer(0)})
 
 
-    get_ipython().run_line_magic('matplotlib', 'inline')
+    # get_ipython().run_line_magic('matplotlib', 'inline')
     nx.draw(G, with_labels=True)
 
 
