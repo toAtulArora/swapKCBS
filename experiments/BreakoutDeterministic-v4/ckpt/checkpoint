@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/kishor/Documents/Kishor_Projects/swapKCBS/experiments/BreakoutDeterministic-v4/ckpt/model"
+all_model_checkpoint_paths: "/home/kishor/Documents/Kishor_Projects/swapKCBS/experiments/BreakoutDeterministic-v4/ckpt/model"
