@@ -1,0 +1,44 @@
+{
+    "ac_kwargs":	{
+        "activation":	"relu",
+        "hidden_sizes":	[
+            64,
+            64
+        ]
+    },
+    "actor_critic":	"mlp_actor_critic",
+    "clip_ratio":	0.2,
+    "env_fn":	"<function <lambda> at 0x7f50c9d61ef0>",
+    "epochs":	50,
+    "exp_name":	"multimode",
+    "gamma":	0.99,
+    "lam":	0.99,
+    "logger":	{
+        "<spinup.utils.logx.EpochLogger object at 0x7f50c8151610>":	{
+            "epoch_dict":	{},
+            "exp_name":	"multimode",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"./",
+            "output_file":	{
+                "<_io.TextIOWrapper name='./progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"multimode",
+        "output_dir":	"./"
+    },
+    "max_ep_len":	5000,
+    "pi_lr":	0.0001,
+    "save_freq":	10,
+    "seed":	0,
+    "steps_per_epoch":	200000,
+    "target_kl":	100,
+    "train_pi_iters":	100,
+    "train_v_iters":	100,
+    "vf_lr":	1e-05
+}
