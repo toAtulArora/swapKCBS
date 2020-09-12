@@ -105,6 +105,166 @@ practical.
 Introduction
 \end_layout
 
+\begin_layout Subsection
+Why self-testing
+\end_layout
+
+\begin_layout Subsubsection
+State of the art
+\end_layout
+
+\begin_layout Itemize
+Bell/Device independence | Tensor structure
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Limitation: Difficult to enforce etc
+\end_layout
+
+\begin_layout Itemize
+Curve less robust to noise
+\end_layout
+
+\begin_layout Itemize
+Math is harder
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Semi device independent
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Easier to implement
+\end_layout
+
+\begin_layout Itemize
+EPR steering [K]; almost like blind computing
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All bipartite entangled states can be self-tested by quantum steering |
+ EPR steering
+\end_layout
+
+\begin_layout Subsubsection
+Local Self testing 
+\end_layout
+
+\begin_layout Standard
+Motivation: Device certification.
+\end_layout
+
+\begin_layout Itemize
+Computation, which is usually local, it is inconvenient also less secure
+ to trust another party etc.
+\end_layout
+
+\begin_layout Standard
+State of the art
+\end_layout
+
+\begin_layout Itemize
+Vidick et al
+\end_layout
+
+\begin_layout Itemize
+Kishor's et al article on self-testing.
+ Robustness curve was given up to multiplicative constants.
+ Not directly implementable.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Contextuality
+\end_layout
+
+\begin_layout Standard
+Informal quick introduction
+\end_layout
+
+\begin_layout Subsubsection
+Contribution
+\end_layout
+
+\begin_layout Standard
+Address limitations of Kishor et al's article
+\end_layout
+
+\begin_layout Itemize
+theoretically obtained the robustness curve
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Moment matrices based approach
+\end_layout
+
+\begin_layout Itemize
+First robustness curve for a non-contextuality inequality (five cycles no
+ less!)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+experimental demonstration of local self-testing
+\end_layout
+
+\begin_layout Subsubsection
+Assumptions and Memory leakage :P
+\end_layout
+
+\begin_layout Standard
+Self testing works under the following.
+\end_layout
+
+\begin_layout Subsubsection
+Circumventing the memory assumption
+\end_layout
+
+\begin_layout Itemize
+Memory based
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantum classical gap?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dimensions based measures
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantum classical gap 
+\end_layout
+
+\begin_layout Itemize
+log[classical dimensions]=memory; quantum dimension = quantum memory
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Criticism:
+\end_layout
+
+\begin_layout Standard
+BQP
+\begin_inset Formula $\subseteq$
+\end_inset
+
+PSPACE; that's fine we hope to find the exact curve to certify
+\end_layout
+
+\begin_layout Itemize
+Poly separation or some such.
+\end_layout
+
 \begin_layout Section
 Background
 \end_layout
@@ -117,11 +277,27 @@ Exclusivity graph approach to contextuality
 Robust self-testing
 \end_layout
 
+\begin_layout Itemize
+Definition
+\end_layout
+
+\begin_layout Itemize
+Statement for KCBS [PRL]
+\end_layout
+
+\begin_layout Itemize
+Robustness curve is missing! Or is it?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Subsection
 Verifying the assumptions experimentally
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The self-testing results in reference
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -156,7 +332,7 @@ The black box has no more memory than its information-carrying capacity.
  Each box is used once, and there is an unlimited supply of them.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 In the experiments, we verify sharpness (assumption 1) and compatibility
  (assumption 2) based on the techniques in reference
 \begin_inset CommandInset citation
@@ -180,7 +356,7 @@ literal "false"
  The appropriate mathematical expression for the same could be given by
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 R_{\mu}=\frac{\sum_{a_{1}}N\left(A_{\mu}=a_{1},A_{\mu}=a_{1}\right)}{N\left(A_{\mu},A_{\mu}\right)},
@@ -192,7 +368,7 @@ where
 \begin_inset Formula $N(.)$
 \end_inset
 
-quantifies the number of instances corresponding to the expression inside
+ quantifies the number of instances corresponding to the expression inside
  its following bracket.
  Coming back to assumption 2, the necessary conditions for compatibility
  are the absence of context-signalling as well as lack of influence of a
@@ -208,7 +384,7 @@ S_{u,v,w;i}^{f}=\frac{N_{i}\left(A_{\nu},A_{u}=a_{1}\right)}{N_{i}\left(A_{\nu},
 whereas the backward context-signalling is given by
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{equation}
 S_{u,v,w;i}^{b}=\frac{N_{i}\left(A_{u}=a_{1},A_{\nu}\right)}{N_{i}\left(A_{\nu},A_{u}\right)}-\frac{N_{i}\left(A=a_{1},A_{w}\right)}{N_{i}\left(A_{w},A_{u}\right)}.\label{eq:SigB}
@@ -246,24 +422,60 @@ noprefix "false"
  (TODO: Add the compatibility check via contextuality-by-default approach)
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Experimental results
+Robustness Curve
+\end_layout
+
+\begin_layout Subsection
+Description
+\end_layout
+
+\begin_layout Itemize
+General description (explain importance)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider any state and measurement system, which we henceforth call a configurat
+ion, that is consistent with the observed data.
+ A robustness curve is a lower bound on the fidelity of any such configuration
+ with the ideal configuration.
+ The curve is a relation between the fidelity and the value of the KCBS
+ expression.
+\end_layout
+
+\begin_layout Itemize
+More formally, this means 
+\begin_inset Formula $\text{min}\mathcal{F}\left(\left(\left|\psi^{\text{ideal}}\right\rangle ,\left\{ \Pi_{i}^{\text{ideal}}\right\} _{i=1}^{5}\right),\left(\left|\psi^{\text{cand}}\right\rangle ,\left\{ \Pi_{i}^{\text{cand}}\right\} _{i=1}^{5}\right)\right)$
+\end_inset
+
+ subject to the constraint that 
+\begin_inset Formula $\left|\psi^{\text{cand}}\right\rangle ,\left\{ \Pi_{i}^{\text{cand}}\right\} _{i=1}^{5}$
+\end_inset
+
+ satisfy the experimental statistics.
+\end_layout
+
+\begin_layout Itemize
+Fidelity= fidelity of state plus fidelity of measurement
+\end_layout
+
+\begin_layout Itemize
+Finding a lower-bound is non-trivial.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Overall Strategy
 \end_layout
 
 \begin_layout Standard
-The experimental implementation corresponding to the work in ref 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bharti2018"
-literal "false"
 
-\end_inset
-
- was carried on.
-\end_layout
-
-\begin_layout Section
-Theoretical Analysis
 \end_layout
 
 \begin_layout Standard
@@ -294,7 +506,8 @@ literal "false"
  analysis.
  Here, regularization means finding the statistics which is closest to our
  experimental statistics and belongs to the quantum set.
- The
+ The set of quantum behaviours forms a convex set, known as theta body.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -425,6 +638,26 @@ Providing the lower bound on fidelity
 
 \begin_layout Standard
 NPA analoge for theta body
+\end_layout
+
+\begin_layout Section
+Experimental results
+\end_layout
+
+\begin_layout Standard
+The experimental implementation corresponding to the work in ref 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+ was carried on.
+\end_layout
+
+\begin_layout Section
+Discussion
 \end_layout
 
 \begin_layout Section
