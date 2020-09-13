@@ -114,7 +114,8 @@ Understanding the inner workings of quantum devices becomes challenging
  and crucial as we scale quantum devices.
  The task of quantum device certification is inherently challenging due
  to exponential scaling of Hilbert space as system size increases.
- One of the most potent methodologies to render guarantees regarding the
+ Moreover, in a faithfully minimalistic scenario, developing trust in the
+  One of the most potent methodologies to render guarantees regarding the
  inner functioning of quantum devices solely based on experimental statistics,
  under reasonable assumptions, is self-testing.
  
