@@ -112,8 +112,7 @@ Why self-testing
 \begin_layout Standard
 Understanding the inner working of quantum devices becomes challenging and
  crucial as we scale quantum devices.
- Quantum device certification has been a task of paramount importance, and
- has recently matu
+ For example, in order to the output of quantum computation, 
 \end_layout
 
 \begin_layout Subsection
