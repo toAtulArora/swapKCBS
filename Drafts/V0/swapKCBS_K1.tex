@@ -1,0 +1,231 @@
+%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[british]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,lmargin=1cm,rmargin=1cm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\title{Local and Robust Self testing using trapped ions}
+\author{Xiaomin etc.., Atul Singh Arora, Kishor Bharti, Adan Cabello, Kwek
+Leong Chuan}
+\maketitle
+\begin{abstract}
+We provide experimental implementation of KCBS self-testing scheme.
+Theoretical tools are supplemented to render the results in \textit{Physical
+Review Letters 122 (25), 250403 }practical.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{Why self-testing}
+
+Understanding the inner workings of quantum devices becomes challenging
+and crucial as we scale quantum devices. The task of quantum device
+certification is inherently challenging due to exponential scaling
+of Hilbert space as system size increases. Moreover, in a faithfully
+minimalistic scenario, developing trust in the internal functiong
+of quantum device requires schemes One of the most potent methodologies
+to render guarantees regarding the inner functioning of quantum devices
+solely based on experimental statistics, under reasonable assumptions,
+is self-testing. 
+
+\subsection{State of the art}
+\begin{itemize}
+\item Bell/Device independence | Tensor structure
+\begin{itemize}
+\item Limitation: Difficult to enforce etc
+\item Curve less robust to noise
+\item Math is harder
+\end{itemize}
+\item Semi device independent
+\begin{itemize}
+\item Easier to implement
+\item EPR steering {[}K{]}; almost like blind computing
+\end{itemize}
+\item All bipartite entangled states can be self-tested by quantum steering
+| EPR steering
+\end{itemize}
+
+\subsection{Local Self testing }
+
+Motivation: Device certification.
+\begin{itemize}
+\item Computation, which is usually local, it is inconvenient also less
+secure to trust another party etc.
+\end{itemize}
+State of the art
+\begin{itemize}
+\item Vidick et al
+\item Kishor's et al article on self-testing. Robustness curve was given
+up to multiplicative constants. Not directly implementable. 
+\end{itemize}
+
+\subsection{Contextuality}
+
+Informal quick introduction
+
+\subsubsection{Contribution}
+
+Address limitations of Kishor et al's article
+\begin{itemize}
+\item theoretically obtained the robustness curve
+\begin{itemize}
+\item Moment matrices based approach
+\item First robustness curve for a non-contextuality inequality (five cycles
+no less!)
+\end{itemize}
+\item experimental demonstration of local self-testing
+\end{itemize}
+
+\subsubsection{Assumptions and Memory leakage :P}
+
+Self testing works under the following.
+
+\subsubsection{Circumventing the memory assumption}
+\begin{itemize}
+\item Memory based
+\begin{itemize}
+\item Quantum classical gap?
+\end{itemize}
+\item Dimensions based measures
+\begin{itemize}
+\item Quantum classical gap 
+\item log{[}classical dimensions{]}=memory; quantum dimension = quantum
+memory
+\end{itemize}
+\end{itemize}
+Criticism:
+
+BQP$\subseteq$PSPACE; that's fine we hope to find the exact curve
+to certify
+\begin{itemize}
+\item Poly separation or some such.
+\end{itemize}
+
+\section{Background}
+
+\subsection{Exclusivity graph approach to contextuality}
+
+\subsection{Robust self-testing}
+\begin{itemize}
+\item Definition
+\item Statement for KCBS {[}PRL{]}
+\item Robustness curve is missing! Or is it?
+\end{itemize}
+
+
+\section{Robustness Curve}
+
+\subsection{Description}
+\begin{itemize}
+\item General description (explain importance)
+\begin{itemize}
+\item Consider any state and measurement system, which we henceforth call
+a configuration, that is consistent with the observed data. A robustness
+curve is a lower bound on the fidelity of any such configuration with
+the ideal configuration. The curve is a relation between the fidelity
+and the value of the KCBS expression.
+\item More formally, this means $\text{min}\mathcal{F}\left(\left(\left|\psi^{\text{ideal}}\right\rangle ,\left\{ \Pi_{i}^{\text{ideal}}\right\} _{i=1}^{5}\right),\left(\left|\psi^{\text{cand}}\right\rangle ,\left\{ \Pi_{i}^{\text{cand}}\right\} _{i=1}^{5}\right)\right)$
+subject to the constraint that $\left|\psi^{\text{cand}}\right\rangle ,\left\{ \Pi_{i}^{\text{cand}}\right\} _{i=1}^{5}$
+satisfy the experimental statistics.
+\item Fidelity= fidelity of state plus fidelity of measurement
+\item Finding a lower-bound is non-trivial.
+\end{itemize}
+\end{itemize}
+
+\subsection{Overall Strategy {[}TODO: update later{]}}
+\begin{itemize}
+\item Regularizing the experimental statistics
+\item Constructing the isometry
+\item Deriving the expression for fidelity
+\item Providing the lower bound
+\end{itemize}
+The goal is to provide a lower bound on fidelity for the experimental
+results in section 2. The following steps are required:
+
+\subsection{Regularizing the experimental statistics}
+
+In reference \cite{Bharti2018}, authors assume that the measurement
+operators follow cyclic compatibility structure. However, this need
+not be true in the real life experimental scenario. Thus, the experimental
+data may not belong to quantum set due to finite statistics and violation
+of the cyclic compatibility structure. This demands a regularization
+of the experimental data for the theoretical analysis. Here, regularization
+means finding the statistics which is closest to our experimental
+statistics and belongs to the quantum set. The set of quantum behaviours
+forms a convex set, known as theta body. 
+
+\subsection{Providing a lower bound on the fidelity from regularized measurement
+statistics}
+
+\subsubsection{Constructing the isometry}
+
+A swap circuit between two qudit registers is given by $S=TUVU$ where
+
+\[
+T=\mathbb{I}\otimes\sum_{k}\vert-k\rangle\langle k\vert
+\]
+
+\[
+U=\sum_{k=0}^{d-1}P^{k}\otimes\vert k\rangle\langle k\vert
+\]
+
+\[
+V=\sum_{k=0}^{d-1}\vert k\rangle\langle k\vert\otimes P^{-k}
+\]
+
+and
+
+\[
+P=\sum_{k=0}^{d-1}\vert k+1\rangle\langle k\vert.
+\]
+
+Here, $P$ is a translation operator.
+
+TUVU, Localizing matrix etc....
+
+\subsubsection{Deriving the expression for fidelity}
+
+Let $\left\{ \left\{ \bar{\Pi_{i}}\right\} _{i\in V},\vert\bar{\psi}\rangle\right\} $
+be the ideal configuration and $\left\{ \left\{ \Pi_{i}\right\} ,\vert\psi\rangle\right\} $
+be the candidate configuration. Our expression for the fidelity for
+the aforementioned configurations is given by
+\[
+F\left(\alpha,\beta\right)=\alpha\sum_{i\in V}\langle\bar{\psi\vert}\bar{\Pi_{i}}\Pi_{i}\vert\psi\rangle+\beta\langle\bar{\psi\vert}\psi\rangle,
+\]
+where $\alpha$,$\beta\in\mathbb{R}$ and are weights on fidelitiy
+for states and measured states respectively.
+
+The total fidelity for state and projectors for odd $n$-cycle scenario
+in the ideal case is $n+1.$
+
+\subsubsection{Providing the lower bound on fidelity}
+
+NPA analoge for theta body
+
+\section{Experimental results}
+
+The experimental implementation corresponding to the work in ref \cite{Bharti2018}
+was carried on.
+
+\section{Discussion}
+
+\section{Conclusions}
+
+\bibliographystyle{plain}
+\bibliography{theta_number}
+
+\end{document}
