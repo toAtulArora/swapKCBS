@@ -1,0 +1,696 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\rightmargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Local and Robust Self testing using trapped ions
+\end_layout
+
+\begin_layout Author
+Xiaomin etc.., Atul Singh Arora, Kishor Bharti, Adan Cabello, Kwek Leong Chuan
+\end_layout
+
+\begin_layout Abstract
+We provide experimental implementation of KCBS self-testing scheme.
+ Theoretical tools are supplemented to render the results in 
+\shape italic
+Physical Review Letters 122 (25), 250403 
+\shape default
+practical.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Why self-testing
+\end_layout
+
+\begin_layout Subsubsection
+State of the art
+\end_layout
+
+\begin_layout Itemize
+Bell/Device independence | Tensor structure
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Limitation: Difficult to enforce etc
+\end_layout
+
+\begin_layout Itemize
+Curve less robust to noise
+\end_layout
+
+\begin_layout Itemize
+Math is harder
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Semi device independent
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Easier to implement
+\end_layout
+
+\begin_layout Itemize
+EPR steering [K]; almost like blind computing
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All bipartite entangled states can be self-tested by quantum steering |
+ EPR steering
+\end_layout
+
+\begin_layout Subsubsection
+Local Self testing 
+\end_layout
+
+\begin_layout Standard
+Motivation: Device certification.
+\end_layout
+
+\begin_layout Itemize
+Computation, which is usually local, it is inconvenient also less secure
+ to trust another party etc.
+\end_layout
+
+\begin_layout Standard
+State of the art
+\end_layout
+
+\begin_layout Itemize
+Vidick et al
+\end_layout
+
+\begin_layout Itemize
+Kishor's et al article on self-testing.
+ Robustness curve was given up to multiplicative constants.
+ Not directly implementable.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Contextuality
+\end_layout
+
+\begin_layout Standard
+Informal quick introduction
+\end_layout
+
+\begin_layout Subsubsection
+Contribution
+\end_layout
+
+\begin_layout Standard
+Address limitations of Kishor et al's article
+\end_layout
+
+\begin_layout Itemize
+theoretically obtained the robustness curve
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Moment matrices based approach
+\end_layout
+
+\begin_layout Itemize
+First robustness curve for a non-contextuality inequality (five cycles no
+ less!)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+experimental demonstration of local self-testing
+\end_layout
+
+\begin_layout Subsubsection
+Assumptions and Memory leakage :P
+\end_layout
+
+\begin_layout Standard
+Self testing works under the following.
+\end_layout
+
+\begin_layout Subsubsection
+Circumventing the memory assumption
+\end_layout
+
+\begin_layout Itemize
+Memory based
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantum classical gap?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dimensions based measures
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantum classical gap 
+\end_layout
+
+\begin_layout Itemize
+log[classical dimensions]=memory; quantum dimension = quantum memory
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Criticism:
+\end_layout
+
+\begin_layout Standard
+BQP
+\begin_inset Formula $\subseteq$
+\end_inset
+
+PSPACE; that's fine we hope to find the exact curve to certify
+\end_layout
+
+\begin_layout Itemize
+Poly separation or some such.
+\end_layout
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Subsection
+Exclusivity graph approach to contextuality
+\end_layout
+
+\begin_layout Subsection
+Robust self-testing
+\end_layout
+
+\begin_layout Itemize
+Definition
+\end_layout
+
+\begin_layout Itemize
+Statement for KCBS [PRL]
+\end_layout
+
+\begin_layout Itemize
+Robustness curve is missing! Or is it?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsection
+Verifying the assumptions experimentally
+\end_layout
+
+\begin_layout Plain Layout
+The self-testing results in reference
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+ hinges on three assumptions:
+\end_layout
+
+\begin_layout Enumerate
+The measurements are 
+\begin_inset Quotes eld
+\end_inset
+
+sharp
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Sharp measurements are outcome-repeatable and minimally disturbing.
+\end_layout
+
+\begin_layout Enumerate
+The measurements follow the compatibility relation according to an odd cycle
+ graph.
+\end_layout
+
+\begin_layout Enumerate
+The black box has no more memory than its information-carrying capacity.
+ Each box is used once, and there is an unlimited supply of them.
+\end_layout
+
+\begin_layout Plain Layout
+In the experiments, we verify sharpness (assumption 1) and compatibility
+ (assumption 2) based on the techniques in reference
+\begin_inset CommandInset citation
+LatexCommand cite
+key "leupold2018sustained"
+literal "false"
+
+\end_inset
+
+.
+ To quantify sharpness of an observable 
+\begin_inset Formula $A_{\mu}$
+\end_inset
+
+, it is instructive to quantify the probability of getting the same outcome
+ corresponding to two consecutive measurements of the same measurement i.e.
+ 
+\begin_inset Formula $A_{\mu}.$
+\end_inset
+
+ The appropriate mathematical expression for the same could be given by
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+R_{\mu}=\frac{\sum_{a_{1}}N\left(A_{\mu}=a_{1},A_{\mu}=a_{1}\right)}{N\left(A_{\mu},A_{\mu}\right)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $N(.)$
+\end_inset
+
+ quantifies the number of instances corresponding to the expression inside
+ its following bracket.
+ Coming back to assumption 2, the necessary conditions for compatibility
+ are the absence of context-signalling as well as lack of influence of a
+ precedding compatible measurement on the statistics of an observable.
+ The forward context-signalling is quantified by
+\begin_inset Formula 
+\begin{equation}
+S_{u,v,w;i}^{f}=\frac{N_{i}\left(A_{\nu},A_{u}=a_{1}\right)}{N_{i}\left(A_{\nu},A_{u}\right)}-\frac{N_{i}\left(A_{w},A_{u}=a_{1}\right)}{N_{i}\left(A_{w},A_{u}\right)},\label{eq:SigF}
+\end{equation}
+
+\end_inset
+
+whereas the backward context-signalling is given by
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+S_{u,v,w;i}^{b}=\frac{N_{i}\left(A_{u}=a_{1},A_{\nu}\right)}{N_{i}\left(A_{\nu},A_{u}\right)}-\frac{N_{i}\left(A=a_{1},A_{w}\right)}{N_{i}\left(A_{w},A_{u}\right)}.\label{eq:SigB}
+\end{equation}
+
+\end_inset
+
+It is worth mentioning that the expressions for the forward and backward
+ context-signalling are defined for some fixed input state 
+\begin_inset Formula $i.$
+\end_inset
+
+ In case of no-context signalling, the value of both the expressions 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SigB"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SigF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is zero.
+ Regarding assumption 3, we haven't closed the memory loop-hole.
+ (TODO: Add the compatibility check via contextuality-by-default approach)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Robustness Curve
+\end_layout
+
+\begin_layout Subsection
+Description
+\end_layout
+
+\begin_layout Itemize
+General description (explain importance)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider any state and measurement system, which we henceforth call a configurat
+ion, that is consistent with the observed data.
+ A robustness curve is a lower bound on the fidelity of any such configuration
+ with the ideal configuration.
+ The curve is a relation between the fidelity and the value of the KCBS
+ expression.
+\end_layout
+
+\begin_layout Itemize
+More formally, this means 
+\begin_inset Formula $\text{min}\mathcal{F}\left(\left(\left|\psi^{\text{ideal}}\right\rangle ,\left\{ \Pi_{i}^{\text{ideal}}\right\} _{i=1}^{5}\right),\left(\left|\psi^{\text{cand}}\right\rangle ,\left\{ \Pi_{i}^{\text{cand}}\right\} _{i=1}^{5}\right)\right)$
+\end_inset
+
+ subject to the constraint that 
+\begin_inset Formula $\left|\psi^{\text{cand}}\right\rangle ,\left\{ \Pi_{i}^{\text{cand}}\right\} _{i=1}^{5}$
+\end_inset
+
+ satisfy the experimental statistics.
+\end_layout
+
+\begin_layout Itemize
+Fidelity= fidelity of state plus fidelity of measurement
+\end_layout
+
+\begin_layout Itemize
+Finding a lower-bound is non-trivial.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Overall Strategy [TODO: update later]
+\end_layout
+
+\begin_layout Itemize
+Regularizing the experimental statistics
+\end_layout
+
+\begin_layout Itemize
+Constructing the isometry
+\end_layout
+
+\begin_layout Itemize
+Deriving the expression for fidelity
+\end_layout
+
+\begin_layout Itemize
+Providing the lower bound
+\end_layout
+
+\begin_layout Standard
+The goal is to provide a lower bound on fidelity for the experimental results
+ in section 2.
+ The following steps are required:
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsection
+Regularizing the experimental statistics
+\end_layout
+
+\begin_layout Standard
+In reference 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+, authors assume that the measurement operators follow cyclic compatibility
+ structure.
+ However, this need not be true in the real life experimental scenario.
+ Thus, the experimental data may not belong to quantum set due to finite
+ statistics and violation of the cyclic compatibility structure.
+ This demands a regularization of the experimental data for the theoretical
+ analysis.
+ Here, regularization means finding the statistics which is closest to our
+ experimental statistics and belongs to the quantum set.
+ The set of quantum behaviours forms a convex set, known as theta body.
+ 
+\end_layout
+
+\begin_layout Subsection
+Providing a lower bound on the fidelity from regularized measurement statistics
+\end_layout
+
+\begin_layout Subsubsection
+Constructing the isometry
+\end_layout
+
+\begin_layout Standard
+A swap circuit between two qudit registers is given by 
+\begin_inset Formula $S=TUVU$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\mathbb{I}\otimes\sum_{k}\vert-k\rangle\langle k\vert
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\sum_{k=0}^{d-1}P^{k}\otimes\vert k\rangle\langle k\vert
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\sum_{k=0}^{d-1}\vert k\rangle\langle k\vert\otimes P^{-k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P=\sum_{k=0}^{d-1}\vert k+1\rangle\langle k\vert.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $P$
+\end_inset
+
+ is a translation operator.
+\end_layout
+
+\begin_layout Standard
+TUVU, Localizing matrix etc....
+\end_layout
+
+\begin_layout Subsubsection
+Deriving the expression for fidelity
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\left\{ \left\{ \bar{\Pi_{i}}\right\} _{i\in V},\vert\bar{\psi}\rangle\right\} $
+\end_inset
+
+ be the ideal configuration and 
+\begin_inset Formula $\left\{ \left\{ \Pi_{i}\right\} ,\vert\psi\rangle\right\} $
+\end_inset
+
+ be the candidate configuration.
+ Our expression for the fidelity for the aforementioned configurations is
+ given by
+\begin_inset Formula 
+\[
+F\left(\alpha,\beta\right)=\alpha\sum_{i\in V}\langle\bar{\psi\vert}\bar{\Pi_{i}}\Pi_{i}\vert\psi\rangle+\beta\langle\bar{\psi\vert}\psi\rangle,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+\begin_inset Formula $\beta\in\mathbb{R}$
+\end_inset
+
+ and are weights on fidelitiy for states and measured states respectively.
+\end_layout
+
+\begin_layout Standard
+The total fidelity for state and projectors for odd 
+\begin_inset Formula $n$
+\end_inset
+
+-cycle scenario in the ideal case is 
+\begin_inset Formula $n+1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Providing the lower bound on fidelity
+\end_layout
+
+\begin_layout Standard
+NPA analoge for theta body
+\end_layout
+
+\begin_layout Section
+Experimental results
+\end_layout
+
+\begin_layout Standard
+The experimental implementation corresponding to the work in ref 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bharti2018"
+literal "false"
+
+\end_inset
+
+ was carried on.
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "theta_number"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
