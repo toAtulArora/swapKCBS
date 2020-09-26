@@ -111,13 +111,14 @@ Why self-testing
 
 \begin_layout Standard
 Understanding the inner workings of quantum devices becomes challenging
- and crucial as we scale quantum devices.
+ and crucial with the increase in their corresponding dimensionality.
  The task of quantum device certification is inherently challenging due
- to exponential scaling of Hilbert space as system size increases.
+ to the exponential scaling of Hilbert space as system size increases.
  Moreover, in a faithfully minimalistic scenario, developing trust in the
-  One of the most potent methodologies to render guarantees regarding the
- inner functioning of quantum devices solely based on experimental statistics,
- under reasonable assumptions, is self-testing.
+ internal functiong of quantum device requires schemes to  One of the most
+ potent methodologies to render guarantees regarding the inner functioning
+ of quantum devices solely based on experimental statistics, under reasonable
+ assumptions, is self-testing.
  
 \end_layout
 
