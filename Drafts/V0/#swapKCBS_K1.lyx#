@@ -126,7 +126,8 @@ Understanding the internal workings of quantum devices becomes challenging
  GHZ states, all pure bipartite entangled states, and all multipartite entangled
  states that admit a Schmidt decomposition.
  The idea of self testing has been further extended to prepare-and-measure
- scenario, contextuality, quantum steering and self-
+ scenario, contextuality and quantum steering.
+ 
 \end_layout
 
 \begin_layout Subsection
