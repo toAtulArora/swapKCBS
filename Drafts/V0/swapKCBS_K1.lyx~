@@ -125,6 +125,8 @@ Understanding the inner workings of quantum devices becomes challenging
  Since then, self-testing via Bell nonlocality have been demonstrated for
  GHZ states, all pure bipartite entangles states and all multipartite entangled
  states that admit a Schmidt decomposition.
+ Self-testing via Bell nonlocality is also known as device independent self
+ testing as it can be seen as black-box certification of quantum systems.
 \end_layout
 
 \begin_layout Subsection

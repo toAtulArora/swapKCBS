@@ -127,7 +127,7 @@ Understanding the internal workings of quantum devices becomes challenging
  states that admit a Schmidt decomposition.
  Self-testing via Bell nonlocality is also known as device-independent self-test
 ing as it can be seen as black-box certification of quantum systems.
- The idea of se
+ Apart from 
 \end_layout
 
 \begin_layout Subsection
