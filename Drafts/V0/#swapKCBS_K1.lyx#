@@ -189,7 +189,8 @@ Local Self testing
 Self-testing based on Bell nonlocality is a powerful technique which allows
  us to develop insights regarding the inner workings of a pair of non-communicat
 ing entangled devices.
- Comm
+ However, for single untrusted quantum devices, self-testing based on Bell-nonlo
+cality will 
 \end_layout
 
 \begin_layout Standard
