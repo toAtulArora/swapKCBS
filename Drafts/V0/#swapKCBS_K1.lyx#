@@ -120,8 +120,9 @@ Understanding the internal workings of quantum devices becomes challenging
  One of the most potent methodologies to render guarantees regarding the
  internal functioning of quantum devices solely based on experimental statistics
 , under reasonable assumptions, is self-testing.
- The first self-testing protocol was devised in the milestone paper by Mayers
- and Yao in 2004, which relied on Bell nonlocality.
+ The first self-testing protocol for a pair of non-communicating entangled
+ quantum devices was devised in the milestone paper by Mayers and Yao in
+ 2004, which relied on Bell nonlocality.
  Since then, self-testing via Bell nonlocality has been exhibited for GHZ
  states, all pure bipartite entangled states, and all multipartite entangled
  states that admit a Schmidt decomposition.
@@ -132,7 +133,7 @@ Understanding the internal workings of quantum devices becomes challenging
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Subsection
 State of the art
@@ -182,6 +183,13 @@ All bipartite entangled states can be self-tested by quantum steering |
 
 \begin_layout Subsection
 Local Self testing 
+\end_layout
+
+\begin_layout Standard
+Self-testing based on Bell nonlocality is a powerful technique which allows
+ us to develop insights regarding the inner workings of a pair of non-communicat
+ing entangled devices.
+ Comm
 \end_layout
 
 \begin_layout Standard
