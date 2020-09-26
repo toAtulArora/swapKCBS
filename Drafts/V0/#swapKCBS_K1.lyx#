@@ -122,13 +122,17 @@ Understanding the internal workings of quantum devices becomes challenging
 , under reasonable assumptions, is self-testing.
  The first self-testing protocol was devised in the milestone paper by Mayers
  and Yao in 2004, which relied on Bell nonlocality.
- Since then, self-testing via Bell nonlocality has been demonstrated for
- GHZ states, all pure bipartite entangled states, and all multipartite entangled
+ Since then, self-testing via Bell nonlocality has been exhibited for GHZ
+ states, all pure bipartite entangled states, and all multipartite entangled
  states that admit a Schmidt decomposition.
- The idea of self testing has been further extended to prepare-and-measure
+ The idea of self-testing has been further extended to the prepare-and-measure
  scenario, contextuality and quantum steering.
- 
+ For a comprehensive review of self-testing, we refer to [cite].
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
 
 \begin_layout Subsection
 State of the art
@@ -169,6 +173,11 @@ EPR steering [K]; almost like blind computing
 \begin_layout Itemize
 All bipartite entangled states can be self-tested by quantum steering |
  EPR steering
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
