@@ -122,7 +122,8 @@ Understanding the inner workings of quantum devices becomes challenging
  under reasonable assumptions, is self-testing.
  The first self-testing protocol was developed in the milestone paper by
  Mayers and Yao in 2004, which relied on Bell nonlocality.
- Such schemes 
+ Since then, self-testing via Bell nonlocality have been demonstrated for
+ GHZ states, all pure bipartite entangles states, a
 \end_layout
 
 \begin_layout Subsection
