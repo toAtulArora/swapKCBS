@@ -110,20 +110,24 @@ Why self-testing
 \end_layout
 
 \begin_layout Standard
-Understanding the inner workings of quantum devices becomes challenging
+Understanding the internal workings of quantum devices becomes challenging
  and crucial with the increase in their corresponding dimensionality.
- The task of quantum device certification is inherently challenging due
- to the exponential scaling of Hilbert space as system size increases.
- In a faithfully minimalistic scenario, developing trust in the internal
- functioning of quantum devices requires certification schemes that require
- minimal assumptions about their functioning.
+ The task of quantum device certification is inherently demanding due to
+ the exponential scaling of Hilbert space as system size increases.
+ In a faithfully minimalistic scenario, developing confidence in the inner
+ functioning of quantum devices mandates certification schemes that require
+ minimal assumptions regarding their functioning.
  One of the most potent methodologies to render guarantees regarding the
- inner functioning of quantum devices solely based on experimental statistics,
- under reasonable assumptions, is self-testing.
- The first self-testing protocol was developed in the milestone paper by
- Mayers and Yao in 2004, which relied on Bell nonlocality.
- Since then, self-testing via Bell nonlocality have been demonstrated for
- GHZ states, all pure bipartite entangles states, a
+ internal functioning of quantum devices solely based on experimental statistics
+, under reasonable assumptions, is self-testing.
+ The first self-testing protocol was devised in the milestone paper by Mayers
+ and Yao in 2004, which relied on Bell nonlocality.
+ Since then, self-testing via Bell nonlocality has been demonstrated for
+ GHZ states, all pure bipartite entangled states, and all multipartite entangled
+ states that admit a Schmidt decomposition.
+ Self-testing via Bell nonlocality is also known as device-independent self-test
+ing as it can be seen as black-box certification of quantum systems.
+ The idea of se
 \end_layout
 
 \begin_layout Subsection
