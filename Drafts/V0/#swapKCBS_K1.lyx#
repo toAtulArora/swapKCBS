@@ -205,7 +205,11 @@ cality forfeits its relevance, and one requires local self-testing schemes
  to arbitrarily high dimension.
  Using complexity theoretic arguments, self-testing scheme for a single
  computationally bounded quantum device was given in [Vidick].
- 
+ For a self-testing protocol to be of experimental relevance, the scheme
+ must be robust against experimental noise.
+ Though the self-testing schemes in [ADD] are robust, the robustness was
+ proven upto multiplicative constants.
+ The lack of 
 \end_layout
 
 \begin_layout Itemize
