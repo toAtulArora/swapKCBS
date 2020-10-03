@@ -194,11 +194,11 @@ cality forfeits its relevance, and one requires local self-testing schemes
  for such cases.
  Since Computation typically happens locally, a quantum computer is a canonical
  example of a single quantum device.
- 
-\end_layout
-
-\begin_layout Standard
-
+ This mandates the development of self-testing protocols for single untrusted
+ quantum devices.
+ The first local self-testing scheme was presented in [ADD] where the scheme
+ relied on violation of non-contextuality inequalities.
+  
 \end_layout
 
 \begin_layout Standard
