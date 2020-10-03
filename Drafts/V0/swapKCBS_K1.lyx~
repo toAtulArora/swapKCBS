@@ -197,8 +197,10 @@ cality forfeits its relevance, and one requires local self-testing schemes
  This mandates the development of self-testing protocols for single untrusted
  quantum devices.
  The first local self-testing scheme was presented in [ADD] where the scheme
- relied on violation of non-contextuality inequalities.
-  
+ relied on violation of non-contextuality inequalities via qutrits.
+ In a subsequent work [ADD], the scheme was generalized to arbitrarily high
+ dimension.
+ Using complexity theoretic arguments, self-testing scheme for 
 \end_layout
 
 \begin_layout Standard
