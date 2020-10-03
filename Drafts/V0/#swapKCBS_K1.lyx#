@@ -196,16 +196,16 @@ cality forfeits its relevance, and one requires local self-testing schemes
  example of a single quantum device.
  This mandates the development of self-testing protocols for single untrusted
  quantum devices.
- The first local self-testing scheme was presented in [ADD] where the scheme
- re;i 
-\end_layout
-
-\begin_layout Standard
-State of the art
-\end_layout
-
-\begin_layout Itemize
-Vidick et al
+ The first local self-testing scheme was presented in [PRL] where the scheme
+ relied on violation of non-contextuality inequalities via qutrits.
+ Non-contextuality inequalities are linear inequalities, similar to Bell
+ inequality, the violation of which can be used to witness non-classicality.
+ The advanatage of non-contextuality inequalities over Bell inequality is
+ that it can be In a subsequent work [arXiv], the scheme was generalized
+ to arbitrarily high dimension.
+ Using complexity theoretic arguments, self-testing scheme for a single
+ computationally bounded quantum device was given in [Vidick].
+ 
 \end_layout
 
 \begin_layout Itemize
