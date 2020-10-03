@@ -186,23 +186,19 @@ Local Self testing
 \end_layout
 
 \begin_layout Standard
-Self-testing based on Bell nonlocality is a powerful technique which allows
- us to develop insights regarding the inner workings of a pair of space-like
- searated entangled devices.
+Self-testing based on Bell nonlocality is a powerful method which allows
+ us to acquire insights concerning the inner workings of a duo of space-like
+ separated entangled devices.
  However, for single untrusted quantum devices, self-testing based on Bell-nonlo
-cality loses its relevance and one requires local self-testing schemes.
- Computation typically happens locally and a quantum computer is a canonical
+cality forfeits its relevance, and one requires local self-testing schemes
+ for such cases.
+ Since Computation typically happens locally, a quantum computer is a canonical
  example of a single quantum device.
  
 \end_layout
 
 \begin_layout Standard
-Motivation: Device certification.
-\end_layout
 
-\begin_layout Itemize
-Computation, which is usually local, it is inconvenient also less secure
- to trust another party etc.
 \end_layout
 
 \begin_layout Standard
