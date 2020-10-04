@@ -759,7 +759,16 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
-At the broadest level, the idea is to construct a particular isometry which
+At the broadest level, the idea is to construct a particular isometry (which
+ depends on the operators 
+\begin_inset Formula $\rho$
+\end_inset
+
+ and 
+\begin_inset Formula $\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+).
  
 \end_layout
 
