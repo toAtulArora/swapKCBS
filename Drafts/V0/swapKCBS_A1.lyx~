@@ -759,8 +759,26 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
-At the broadest level, the idea is to construct a particular isometry which
- 
+At the broadest level, the idea is to construct a particular isometry that
+ is intended to map a given quantum realisation into a realisation close
+ to the standard quantum realisation 
+\begin_inset Formula $\rho^{\KCBS},\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}$
+\end_inset
+
+.
+ Note to establish 
+\end_layout
+
+\begin_layout Standard
+(which is defined in terms of the operators 
+\begin_inset Formula $\rho$
+\end_inset
+
+ and 
+\begin_inset Formula $\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+) 
 \end_layout
 
 \begin_layout Itemize

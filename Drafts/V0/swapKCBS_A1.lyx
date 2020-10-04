@@ -759,8 +759,20 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
-At the broadest level, the idea is to construct a particular isometry (which
- depends on the operators 
+At the broadest level, the idea is to construct a particular isometry that
+ is intended to map a given quantum realisation into a realisation close
+ to the standard quantum realisation 
+\begin_inset Formula $\rho^{\KCBS},\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}$
+\end_inset
+
+.
+ Note to establish a lower bound on the fidelities, it suffices to show
+ the existence of one global isometry (for each quantum realisation).
+ 
+\end_layout
+
+\begin_layout Standard
+(which is defined in terms of the operators 
 \begin_inset Formula $\rho$
 \end_inset
 
@@ -768,8 +780,7 @@ At the broadest level, the idea is to construct a particular isometry (which
 \begin_inset Formula $\{\Pi_{i}\}_{i=1}^{5}$
 \end_inset
 
-).
- 
+) 
 \end_layout
 
 \begin_layout Itemize
