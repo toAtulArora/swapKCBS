@@ -565,9 +565,9 @@ noprefix "false"
  self-testing approach.
  To this end, we give a slightly different statement: we show that
 \begin_inset Formula 
-\[
-\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\ge f(\epsilon)
-\]
+\begin{equation}
+\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\ge f(\epsilon)\label{eq:lowerbound}
+\end{equation}
 
 \end_inset
 
@@ -759,6 +759,43 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
+We wish to lower bound the value of the following objective: 
+\begin_inset Formula 
+\[
+\min_{\rho,\{\Pi_{i}\}}\max_{V}\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+ is a quantum realisation of 
+\begin_inset Formula $\{p_{i}\}$
+\end_inset
+
+ (we know 
+\begin_inset Formula $\Pi_{i}$
+\end_inset
+
+ are projectors), 
+\begin_inset Formula $V$
+\end_inset
+
+ is an isometry mapping the space of 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+ to that of 
+\begin_inset Formula $\rho^{\KCBS},\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
 At the broadest level, the idea is to construct a particular isometry that
  is intended to map a given quantum realisation into a realisation close
  to the standard quantum realisation 
@@ -766,7 +803,9 @@ At the broadest level, the idea is to construct a particular isometry that
 \end_inset
 
 .
- Note to establish 
+ Note to establish a lower bound on the fidelities, it suffices to show
+ the existence of one global isometry (for each quantum realisation).
+ 
 \end_layout
 
 \begin_layout Standard
