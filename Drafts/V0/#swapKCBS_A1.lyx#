@@ -571,11 +571,7 @@ noprefix "false"
 
 \end_inset
 
- where 
-\begin_inset Formula $\mathcal{F}(A,B):={\rm tr}\sqrt{\left|A^{1/2}B^{1/2}\right|}$
-\end_inset
-
-, we only require 
+ where we only require 
 \begin_inset Formula $\Pi_{i}$
 \end_inset
 
@@ -759,8 +755,7 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
-At the broadest level, the idea is to construct a particular isometry which
- 
+Our 
 \end_layout
 
 \begin_layout Itemize
