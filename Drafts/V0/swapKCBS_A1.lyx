@@ -759,7 +759,8 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
-We wish to lower bound the value of the following objective function: 
+We may restate the aforesaid discussion more symbolically as lower bounding
+ the value of the following objective function: 
 \begin_inset Formula 
 \[
 \min_{\rho,\{\Pi_{i}\}}\max_{V}\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})
@@ -771,19 +772,29 @@ where
 \begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
 \end_inset
 
- is a quantum realisation of 
-\begin_inset Formula $\{p_{i}\}$
-\end_inset
+ is a quantum realisation
+\begin_inset Foot
+status collapsed
 
- (we know 
+\begin_layout Plain Layout
+note that we assume 
 \begin_inset Formula $\Pi_{i}$
 \end_inset
 
- are projectors), 
+ are projectors as the measurements are assumed to be sharp experimentally
+\end_layout
+
+\end_inset
+
+ of 
+\begin_inset Formula $\{p_{i}\}$
+\end_inset
+
+, 
 \begin_inset Formula $V$
 \end_inset
 
- is an isometry mapping the space of 
+ is an isometry from the space of 
 \begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
 \end_inset
 
@@ -792,32 +803,19 @@ where
 \end_inset
 
 .
- 
-\end_layout
+ At the broadest level, the idea is to drop the maximization over 
+\begin_inset Formula $V$
+\end_inset
 
-\begin_layout Standard
-At the broadest level, the idea is to construct a particular isometry that
- is intended to map a given quantum realisation into a realisation close
- to the standard quantum realisation 
-\begin_inset Formula $\rho^{\KCBS},\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}$
+ with a particular isometry 
+\begin_inset Formula $V$
+\end_inset
+
+ which is expressed in terms of 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
 \end_inset
 
 .
- Note to establish a lower bound on the fidelities, it suffices to show
- the existence of one global isometry (for each quantum realisation).
- 
-\end_layout
-
-\begin_layout Standard
-(which is defined in terms of the operators 
-\begin_inset Formula $\rho$
-\end_inset
-
- and 
-\begin_inset Formula $\{\Pi_{i}\}_{i=1}^{5}$
-\end_inset
-
-) 
 \end_layout
 
 \begin_layout Itemize
