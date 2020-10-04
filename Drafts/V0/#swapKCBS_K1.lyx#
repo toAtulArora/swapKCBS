@@ -213,6 +213,12 @@ ication assumption.
  proven upto multiplicative constants and hence is not directly implementable.
 \end_layout
 
+\begin_layout Standard
+In this Letter, we try to address the limitations of refrence [ADD] by providing
+ the robustness curve.
+ 
+\end_layout
+
 \begin_layout Subsection
 Contextuality
 \end_layout

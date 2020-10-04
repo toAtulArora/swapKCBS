@@ -201,21 +201,16 @@ cality forfeits its relevance, and one requires local self-testing schemes
  Non-contextuality inequalities are linear inequalities, similar to Bell
  inequality, the violation of which can be used to witness non-classicality.
  The advanatage of non-contextuality inequalities over Bell inequality is
- that it can be In a subsequent work [arXiv], the scheme was generalized
+ that it can be implemented for a single device and thus bypasses the non-commun
+ication assumption.
+ In a subsequent work [arXiv], the aforementioned scheme was generalized
  to arbitrarily high dimension.
  Using complexity theoretic arguments, self-testing scheme for a single
  computationally bounded quantum device was given in [Vidick].
  For a self-testing protocol to be of experimental relevance, the scheme
  must be robust against experimental noise.
  Though the self-testing schemes in [ADD] are robust, the robustness was
- proven upto multiplicative constants.
-\end_layout
-
-\begin_layout Itemize
-Kishor's et al article on self-testing.
- Robustness curve was given up to multiplicative constants.
- Not directly implementable.
- 
+ proven upto multiplicative constants and hence is not directly implementable.
 \end_layout
 
 \begin_layout Subsection
