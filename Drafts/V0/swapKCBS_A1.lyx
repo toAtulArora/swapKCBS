@@ -1096,7 +1096,7 @@ Providing a lower bound on the fidelity from regularized measurement statistics
 \end_layout
 
 \begin_layout Standard
-For concreteness, we consider a unitary 
+For concreteness, we first consider a unitary 
 \begin_inset Formula $U_{\swap}$
 \end_inset
 
@@ -1157,9 +1157,10 @@ We want
 \end_inset
 
  are defined on a three dimensional Hilbert space).
- One possible qutrit swapping unitary/circuit (taken from , an article about
- self-testing Bell inequalities) may be defined as 
-\begin_inset Formula $TUVU$
+ One possible qutrit swapping unitary/circuit (a special case of the general
+ qudit swapping unitary/circuit defined in [??], an article about self-testing
+ Bell inequalities) may be defined as 
+\begin_inset Formula $U_{\swap}:=TUVU$
 \end_inset
 
  where 
@@ -1168,18 +1169,19 @@ We want
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-T & =\mathbb{I}_{\mathcal{A}}\otimes\sum_{k=0}^{2}\left|-k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
-U & =\sum_{k=0}^{2}P_{\mathcal{A}}^{k}\otimes\left|k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
-V & =\sum_{k=0}^{2}\left|k\right\rangle \left\langle k\right|_{\mathcal{A}}\otimes P_{\mathcal{A}'}^{-k}
+T & :=\mathbb{I}_{\mathcal{A}}\otimes\sum_{k=0}^{2}\left|-k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
+U & :=\sum_{k=0}^{2}P_{\mathcal{A}}^{k}\otimes\left|k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
+V & :=\sum_{k=0}^{2}\left|k\right\rangle \left\langle k\right|_{\mathcal{A}}\otimes P_{\mathcal{A}'}^{-k}
 \end{align*}
 
 \end_inset
 
 where 
-\begin_inset Formula $P=\sum_{i=0}^{2}\left|k+1\mod3\right\rangle \left\langle k\right|$
+\begin_inset Formula $P:=\sum_{i=0}^{2}\left|k+1\mod3\right\rangle \left\langle k\right|$
 \end_inset
 
  is a translation operator.
+ We omit the proof here (for a proof see ...).
  
 \end_layout
 
