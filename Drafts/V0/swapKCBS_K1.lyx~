@@ -201,28 +201,45 @@ cality forfeits its relevance, and one requires local self-testing schemes
  Non-contextuality inequalities are linear inequalities, similar to Bell
  inequality, the violation of which can be used to witness non-classicality.
  The advanatage of non-contextuality inequalities over Bell inequality is
- that it can be In a subsequent work [arXiv], the scheme was generalized
+ that it can be implemented for a single device and thus bypasses the non-commun
+ication assumption.
+ In a subsequent work [arXiv], the aforementioned scheme was generalized
  to arbitrarily high dimension.
  Using complexity theoretic arguments, self-testing scheme for a single
  computationally bounded quantum device was given in [Vidick].
  For a self-testing protocol to be of experimental relevance, the scheme
  must be robust against experimental noise.
  Though the self-testing schemes in [ADD] are robust, the robustness was
- proven upto multiplicative constants.
+ proven upto multiplicative constants and hence is not directly implementable.
 \end_layout
 
-\begin_layout Itemize
-Kishor's et al article on self-testing.
- Robustness curve was given up to multiplicative constants.
- Not directly implementable.
- 
+\begin_layout Subsection
+Contributions
 \end_layout
+
+\begin_layout Standard
+In this Letter, we try to address the limitations of refrence [ADD] by providing
+ the robustness curve.
+ We use semidefinite programming with moment matrices to obtain the aforemention
+ed curve.
+ This is the first ever robustness curve for a non-contextuality inequality
+ for single quantum system.
+ Furthermore, using single trapped 
+\begin_inset Formula $^{40}{\rm Ca}^{+}$
+\end_inset
+
+ ion, we provide an experimental 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
 
 \begin_layout Subsection
 Contextuality
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Informal quick introduction
 \end_layout
 
@@ -230,7 +247,7 @@ Informal quick introduction
 Contribution
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Address limitations of Kishor et al's article
 \end_layout
 
@@ -257,7 +274,7 @@ experimental demonstration of local self-testing
 Assumptions and Memory leakage :P
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Self testing works under the following.
 \end_layout
 
@@ -289,11 +306,11 @@ log[classical dimensions]=memory; quantum dimension = quantum memory
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Criticism:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 BQP
 \begin_inset Formula $\subseteq$
 \end_inset
@@ -303,6 +320,11 @@ PSPACE; that's fine we hope to find the exact curve to certify
 
 \begin_layout Itemize
 Poly separation or some such.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

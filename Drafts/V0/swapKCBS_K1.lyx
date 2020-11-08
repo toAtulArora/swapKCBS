@@ -214,10 +214,33 @@ ication assumption.
 \end_layout
 
 \begin_layout Subsection
-Contextuality
+Contributions
 \end_layout
 
 \begin_layout Standard
+In this Letter, we try to address the limitations of refrence [ADD] by providing
+ the robustness curve.
+ We use semidefinite programming with moment matrices to obtain the aforemention
+ed curve.
+ This is the first ever robustness curve for a non-contextuality inequality
+ for single quantum system.
+ Furthermore, using single trapped 
+\begin_inset Formula $^{40}{\rm Ca}^{+}$
+\end_inset
+
+ ion, we provide an experimental demonstration of the local self-testing
+ scheme.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Subsection
+Contextuality
+\end_layout
+
+\begin_layout Plain Layout
 Informal quick introduction
 \end_layout
 
@@ -225,7 +248,7 @@ Informal quick introduction
 Contribution
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Address limitations of Kishor et al's article
 \end_layout
 
@@ -252,7 +275,7 @@ experimental demonstration of local self-testing
 Assumptions and Memory leakage :P
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Self testing works under the following.
 \end_layout
 
@@ -284,11 +307,11 @@ log[classical dimensions]=memory; quantum dimension = quantum memory
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Criticism:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 BQP
 \begin_inset Formula $\subseteq$
 \end_inset
@@ -298,6 +321,11 @@ PSPACE; that's fine we hope to find the exact curve to certify
 
 \begin_layout Itemize
 Poly separation or some such.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
