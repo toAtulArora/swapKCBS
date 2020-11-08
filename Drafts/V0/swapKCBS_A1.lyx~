@@ -455,6 +455,45 @@ Description
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\tr}{\text{tr}}
+{\text{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO:
+\end_layout
+
+\begin_layout Itemize
+IID
+\end_layout
+
+\begin_layout Itemize
+Restricted subspace or full subspace, Bell
+\end_layout
+
+\begin_layout Itemize
+Parallel or Serial
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When IID, parallel and serial should become identical
+\end_layout
+
+\begin_layout Itemize
+When not IID, parallel should be more general
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Clarify the issue with the sum
+\end_layout
+
+\begin_layout Standard
 Consider the KCBS scenario, i.e.
  an experimental scenario which is specified by the events 
 \begin_inset Formula $e_{1},e_{2}\dots e_{5}$
@@ -537,7 +576,11 @@ literal "false"
 \end_inset
 
 .
- [Verify this:] This result is stronger than the self-testing results which
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Verify this:] This result is stronger than the self-testing results which
  are usually stated for Bell non-locality, in the following sense.
  Typically, one is only able to make statements about the action of the
  projectors 
@@ -549,6 +592,15 @@ literal "false"
 \end_inset
 
  (see, for instance, ...).
+ EDIT: This was wrong; here we assume the projectors are orthogonal which
+ can't ever be deduced with certainty from observing just the statistics.
+ Maybe some part of the Hilbert space is never accessed by the states in
+ question.
+ 
+\end_layout
+
+\end_inset
+
  Despite this, without the constant hidden in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -565,9 +617,9 @@ noprefix "false"
  self-testing approach.
  To this end, we give a slightly different statement: we show that
 \begin_inset Formula 
-\[
-\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\ge f(\epsilon)
-\]
+\begin{equation}
+\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS}\rho^{\KCBS}\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\ge f(\epsilon)\label{eq:lowerbound}
+\end{equation}
 
 \end_inset
 
@@ -579,7 +631,15 @@ noprefix "false"
 \begin_inset Formula $\Pi_{i}$
 \end_inset
 
- to be projectors and allow 
+ to be projectors (such that 
+\begin_inset Formula $[\Pi_{i},\Pi_{j}]=0$
+\end_inset
+
+ if 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ is an edge of the exclusivity graph) and allow 
 \begin_inset Formula $\rho$
 \end_inset
 
@@ -759,7 +819,213 @@ Overall Strategy
 \end_layout
 
 \begin_layout Standard
-Our 
+TODO
+\end_layout
+
+\begin_layout Itemize
+Verify if we require that 
+\begin_inset Formula $\Pi_{i}\Pi_{j}=0$
+\end_inset
+
+ or that 
+\begin_inset Formula $\tr[\Pi_{i}\Pi_{j}\rho]=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\tr[\Pi_{i}\Pi_{j}\Pi_{k}\rho]$
+\end_inset
+
+ (by assumption; write clearly in the previous section)
+\end_layout
+
+\begin_layout Standard
+We may restate the aforesaid discussion more symbolically as lower bounding
+ the value of the following objective function: 
+\begin_inset Formula 
+\[
+F:=\min_{\rho,\{\Pi_{i}\}}\max_{V}\left[\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS}\rho^{\KCBS}\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+ is a quantum realisation
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+note that we assume 
+\begin_inset Formula $\Pi_{i}$
+\end_inset
+
+ are projectors as the measurements are assumed to be sharp experimentally
+\end_layout
+
+\end_inset
+
+ of 
+\begin_inset Formula $\{p_{i}\}_{i=1}^{5}$
+\end_inset
+
+, 
+\begin_inset Formula $V$
+\end_inset
+
+ is an isometry from 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathcal{H}^{\KCBS}$
+\end_inset
+
+, i.e.
+ from the space on which 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+ act/are defined to that where 
+\begin_inset Formula $\rho^{\KCBS},\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}$
+\end_inset
+
+ act/are defined.
+ At the broadest level, the idea is to drop the maximization over 
+\begin_inset Formula $V$
+\end_inset
+
+ with a particular isometry 
+\begin_inset Formula $V$
+\end_inset
+
+ which is expressed in terms of 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+.
+ Then, as we shall see, the expression for the fidelity appears as a sum
+ of terms of the following form.
+ Let 
+\begin_inset Formula $w$
+\end_inset
+
+ be a word created from the letters, 
+\begin_inset Formula $\{\mathbb{I},\Pi_{1},\Pi_{2}\dots\Pi_{5},\hat{P}\}$
+\end_inset
+
+ with 
+\begin_inset Formula $\hat{P}^{\dagger}\hat{P}=\mathbb{I}$
+\end_inset
+
+, 
+\begin_inset Formula $\Pi_{i}^{2}=\Pi_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Pi_{i}\Pi_{j}=0$
+\end_inset
+
+ if 
+\begin_inset Formula $(i,j)\in E(G)$
+\end_inset
+
+, i.e.
+ when 
+\begin_inset Formula $i,j$
+\end_inset
+
+ are exclusive
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We introduced 
+\begin_inset Formula $\hat{P}$
+\end_inset
+
+ for completeness; its role is explained later.
+\end_layout
+
+\end_inset
+
+.
+ The fidelity is a linear combination of these words, i.e.
+ 
+\begin_inset Formula $F=\min_{\left\{ \left\langle w\right\rangle \right\} }\sum_{w}\alpha_{w}\left\langle w\right\rangle $
+\end_inset
+
+ where 
+\begin_inset Formula $\tr[w\rho]=:\left\langle w\right\rangle $
+\end_inset
+
+, subject to the constraint that 
+\begin_inset Formula $\{\left\langle w\right\rangle \}_{w}$
+\end_inset
+
+ corresponds to a quantum realisation.
+ The advantage of casting the problem in this form is that one can now construct
+ an NPA-like hierarchy.
+ The idea is simple to state.
+ Treat 
+\begin_inset Formula $\left\{ \left\langle w\right\rangle \right\} _{w}$
+\end_inset
+
+ as a vector.
+ Denote by 
+\begin_inset Formula $Q$
+\end_inset
+
+ the set of all such vectors which correspond to a quantum realisation (of
+ 
+\begin_inset Formula $\left\{ p_{i}\right\} _{i=1}^{5}$
+\end_inset
+
+).
+ It turns out that one can impose constraints on words with 
+\begin_inset Formula $k$
+\end_inset
+
+ letters, for instance.
+ Under these constraints, denote by 
+\begin_inset Formula $Q_{k}$
+\end_inset
+
+ the set that is obtained.
+ Note that 
+\begin_inset Formula $Q_{k}\supseteq Q$
+\end_inset
+
+ for it may contain vectors which don't correspond to the quantum realisation.
+ In fact, 
+\begin_inset Formula $Q_{k}$
+\end_inset
+
+ can be characterised using semi-definite programming constraints (which
+ in turn means they are efficiently computable).
+ Intuitively, it is clear that 
+\begin_inset Formula $\lim_{k\to\infty}Q_{k}=Q$
+\end_inset
+
+.
+ Further, it is also clear that 
+\begin_inset Formula $F=\min_{\{\left\langle w\right\rangle \}_{w}\in Q}\sum_{w}\alpha_{w}\left\langle w\right\rangle \ge\min_{\left\{ \left\langle w\right\rangle \right\} _{w}\in Q_{k}}\sum_{w}\alpha_{w}\left\langle w\right\rangle $
+\end_inset
+
+ as we are minimising over a larger set on the right hand side.
+ 
+\end_layout
+
+\begin_layout Standard
+In the following sections, we delineate the aforementioned procedure, including
+ the isometry 
+\begin_inset Formula $V$
+\end_inset
+
+, in detail.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -790,6 +1056,11 @@ Regularizing the experimental statistics [TODO: see later if this is still
 \end_layout
 
 \begin_layout Standard
+TODO: Understand how/why this is justified; How is the measurement incompatibili
+ty being addressed even now?
+\end_layout
+
+\begin_layout Standard
 In reference 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -813,6 +1084,157 @@ literal "false"
 
 \begin_layout Subsection
 Providing a lower bound on the fidelity from regularized measurement statistics
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\swap}{{\rm SWAP}}
+{{\rm SWAP}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For concreteness, we consider a unitary 
+\begin_inset Formula $U_{\swap}$
+\end_inset
+
+ instead of an isometry, which acts on two spaces 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{A}'$
+\end_inset
+
+.
+ For simplicity, suppose that the 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ register is in the state 
+\begin_inset Formula 
+\[
+\sigma\in\underbrace{\{\left|\psi^{\KCBS}\right\rangle \left\langle \psi^{\KCBS}\right|\}\cup\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}}_{:=\mathcal{S}^{\KCBS}}.
+\]
+
+\end_inset
+
+We want 
+\begin_inset Formula $U_{\swap}$
+\end_inset
+
+ to map 
+\begin_inset Formula $\sigma_{\mathcal{A}}\otimes\left|0\right\rangle \left\langle 0\right|_{\mathcal{A}'}$
+\end_inset
+
+ to 
+\begin_inset Formula $\left|0\right\rangle \left\langle 0\right|_{\mathcal{A}}\otimes\sigma_{\mathcal{A}'}$
+\end_inset
+
+ (see ).
+ Our strategy is to construct 
+\begin_inset Formula $U_{\swap}$
+\end_inset
+
+ in this seemingly trivial case and then express it in terms of the state
+ and measurement operators on 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+.
+ The rationale is that by construction, 
+\begin_inset Formula $U_{\swap}$
+\end_inset
+
+ will work for the ideal case and therefore should also work for cases close
+ to ideal.
+ This should become clear momentarily.
+ Note that any circuit that swaps two qutrits should let us achieve our
+ simplified goal (because all elements of 
+\begin_inset Formula $S^{\KCBS}$
+\end_inset
+
+ are defined on a three dimensional Hilbert space).
+ One possible qutrit swapping unitary/circuit (taken from , an article about
+ self-testing Bell inequalities) may be defined as 
+\begin_inset Formula $TUVU$
+\end_inset
+
+ where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+T & =\mathbb{I}_{\mathcal{A}}\otimes\sum_{k=0}^{2}\left|-k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
+U & =\sum_{k=0}^{2}P_{\mathcal{A}}^{k}\otimes\left|k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
+V & =\sum_{k=0}^{2}\left|k\right\rangle \left\langle k\right|_{\mathcal{A}}\otimes P_{\mathcal{A}'}^{-k}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $P=\sum_{i=0}^{2}\left|k+1\mod3\right\rangle \left\langle k\right|$
+\end_inset
+
+ is a translation operator.
+ 
+\end_layout
+
+\begin_layout Itemize
+To conclude that 
+\begin_inset Formula $\sum_{k=0}^{n-1}\left|k\right\rangle \left\langle k\right|\otimes P^{-k}$
+\end_inset
+
+ is an isometry, it .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/Isometry_temp.png
+	lyxscale 40
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Illustration of 
+\begin_inset Formula $U_{\text{SWAP}}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:IllustrationSWAP"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -857,10 +1279,6 @@ V=\sum_{k=0}^{d-1}\vert k\rangle\langle k\vert\otimes P^{-k}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 and
 \end_layout
 
