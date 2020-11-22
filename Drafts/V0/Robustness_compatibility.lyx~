@@ -6,9 +6,6 @@
 \origin unavailable
 \textclass article
 \use_default_options true
-\begin_modules
-theorems-std
-\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -32,7 +29,6 @@ theorems-std
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -48,7 +44,6 @@ theorems-std
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -80,24 +75,8 @@ theorems-std
 
 \begin_body
 
-\begin_layout Title
-Robustness
-\end_layout
+\begin_layout Standard
 
-\begin_layout Theorem
-Given matrices 
-\begin_inset Formula $M$
-\end_inset
-
- and 
-\begin_inset Formula $M^{\prime}$
-\end_inset
-
- such that 
-\begin_inset Formula $\left\Vert M-M^{\prime}\right\Vert \leq\mathcal{O}\left(\epsilon\right),$
-\end_inset
-
- 
 \end_layout
 
 \end_body
