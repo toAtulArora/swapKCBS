@@ -1290,7 +1290,31 @@ where
 
  is a basis for the qutrit space.
  We omit the proof here (for a proof see ...).
- We express the the operators ...
+ To generalise this idea and to construct an isometry, we relax the assumption
+ that 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ is a three dimensional Hilbert space.
+ We re-express replace the operations in 
+\begin_inset Formula $T,U,V$
+\end_inset
+
+ which act on the 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ space by linear combinations of monomials in 
+\begin_inset Formula $\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+.
+ We obtain the coefficients used in these linear combinations by assuming
+ the space is three dimensional.
+ The idea is simply that this map reduces to a swap operation when we re-impose
+ the assumptions and for cases close to it, we expect it to behave appropriately.
+ (TODO: maybe add the circuit for bell inequality to explain at some point?)
+ We describe this procedure more precisely below.
  
 \begin_inset FormulaMacro
 \newcommand{\cross}{\text{cross}}
@@ -1310,16 +1334,49 @@ Constructing an isometry
 
 \end_inset
 
- Let 
+ Let
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 \begin_inset Formula $\mathcal{A}'$
 \end_inset
 
- be a three dimensional Hilbert space and 
+ be a three dimensional Hilbert space spanned by an orthonormal basis 
+\begin_inset Formula $\left\{ \left|\bar{0}\right\rangle _{\mathcal{A}'},\left|\bar{1}\right\rangle _{\mathcal{A}'},\left|\bar{2}\right\rangle _{\mathcal{A}'}\right\} $
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho^{\KCBS},\{\Pi_{i}^{\KCBS}\}_{i=1}^{5}$
+\end_inset
+
+ be an ideal quantum realisation (see ...) on 
+\begin_inset Formula $\mathcal{A}'$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula $\mathcal{A}$
 \end_inset
 
- be a Hilbert space with arbitrary dimension.
- Let 
+ be a Hilbert space with dimension at least 
+\begin_inset Formula $3$
+\end_inset
+
+, the three dimensional subspace of which is spanned by an orthonormal basis
+ 
+\begin_inset Formula $\left\{ \left|\bar{0}\right\rangle _{\mathcal{A}},\left|\bar{1}\right\rangle _{\mathcal{A}},\left|\bar{2}\right\rangle _{\mathcal{A}}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
 \end_inset
 
@@ -1328,7 +1385,11 @@ Constructing an isometry
 \end_inset
 
 .
- Define 
+ 
+\end_layout
+
+\begin_layout Standard
+Define 
 \begin_inset Formula $T,U,V$
 \end_inset
 
@@ -1348,11 +1409,19 @@ noprefix "false"
 
 .
  Let 
-\begin_inset Formula $\mathcal{L}^{\KCBS}:=\{\{\Pi_{i}^{\KCBS}\}_{i=1}^{5},\{\Pi_{i}^{\KCBS}\Pi_{j}^{\KCBS}\}_{i,j=1}^{5},\dots\}$
+\begin_inset Formula 
+\[
+\mathcal{W}^{\KCBS}:=\{\{\Pi_{i}^{\KCBS}\}_{i=1}^{5},\{\Pi_{i}^{\KCBS}\Pi_{j}^{\KCBS}\}_{i,j=1}^{5},\dots\}
+\]
+
 \end_inset
 
  and 
-\begin_inset Formula $\mathcal{L}:=\{\{\Pi_{i}\}_{i=1}^{5},\{\Pi_{i}\Pi_{j}\}_{i,j=1}^{5}\dots\}$
+\begin_inset Formula 
+\[
+\mathcal{W}:=\{\{\Pi_{i}\}_{i=1}^{5},\{\Pi_{i}\Pi_{j}\}_{i,j=1}^{5}\dots\}
+\]
+
 \end_inset
 
  be the set of 
@@ -1367,7 +1436,6 @@ words
  respectively.
 \end_layout
 
-\begin_deeper
 \begin_layout Enumerate
 Translation Operator: 
 \end_layout
@@ -1384,7 +1452,7 @@ Express
 
 , i.e.
  
-\begin_inset Formula $P=\sum_{l\in\mathcal{L}^{\KCBS}}\alpha_{l}l$
+\begin_inset Formula $P=\sum_{l\in\mathcal{W}^{\KCBS}}\alpha_{l}l$
 \end_inset
 
 .
@@ -1392,7 +1460,7 @@ Express
 
 \begin_layout Enumerate
 Define 
-\begin_inset Formula $P_{\mathcal{A}}:=\sum_{l\in\mathcal{L}}\alpha_{l}l$
+\begin_inset Formula $P_{\mathcal{A}}:=\sum_{l\in\mathcal{W}}\alpha_{l}l$
 \end_inset
 
 
@@ -1400,13 +1468,50 @@ Define
 
 \end_deeper
 \begin_layout Enumerate
-Basis projectors: 
+Basis projectors: (intuitively, we replace 
+\begin_inset Formula $\left|\bar{0}\right\rangle \left\langle \bar{0}\right|_{\mathcal{A}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\Pi_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\left|\bar{1}\right\rangle \left\langle \bar{1}\right|_{\mathcal{A}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\Pi_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\bar{2}\right\rangle \left\langle \bar{2}\right|_{\mathcal{A}}$
+\end_inset
+
+ with the 
+\begin_inset Quotes eld
+\end_inset
+
+cross product between 
+\begin_inset Formula $\left|\bar{0}\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\bar{1}\right\rangle $
+\end_inset
+
+ expressed as a projector, which in turn is expressed as a linear combination
+ using 
+\begin_inset Formula $\mathcal{W}$
+\end_inset
+
+)
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
 Define 
-\begin_inset Formula $\left|\bar{2}\right\rangle :=\cross(\left|\bar{0}\right\rangle ,\left|\bar{1}\right\rangle )$
+\begin_inset Formula $\left|\bar{2}\right\rangle _{\mathcal{A}'}:=\cross(\left|\bar{0}\right\rangle _{\mathcal{A}'},\left|\bar{1}\right\rangle _{\mathcal{A}'})$
 \end_inset
 
 .
@@ -1415,12 +1520,12 @@ Define
 \end_inset
 
 Define 
-\begin_inset Formula $\Pi_{1\times2}:=\left|\bar{2}\right\rangle \left\langle \bar{2}\right|$
+\begin_inset Formula $\Pi_{1\times2}^{\KCBS}:=\left|\bar{2}\right\rangle \left\langle \bar{2}\right|_{\mathcal{A}'}$
 \end_inset
 
 .
  Express 
-\begin_inset Formula $\Pi_{1\times2}$
+\begin_inset Formula $\Pi_{1\times2}^{\KCBS}$
 \end_inset
 
  as a linear combination of elements in 
@@ -1429,7 +1534,7 @@ Define
 
 , i.e.
  
-\begin_inset Formula $\Pi_{1\times2}=\sum_{l\in\mathcal{L}^{\KCBS}}\beta_{l}l$
+\begin_inset Formula $\Pi_{1\times2}^{\KCBS}=\sum_{l\in\mathcal{W}^{\KCBS}}\beta_{l}l$
 \end_inset
 
 .
@@ -1438,14 +1543,15 @@ Define
 
 \begin_layout Enumerate
 Define 
-\begin_inset Formula $\left|\bar{0}\right\rangle \left\langle \bar{0}\right|_{\mathcal{A}}:=\Pi_{1}$
+\begin_inset Formula $\Pi_{1\times2}:=\sum_{l\in\mathcal{W}}\beta_{l}l$
 \end_inset
 
-, 
-\begin_inset Formula $\left|\bar{1}\right\rangle \left\langle \bar{1}\right|_{\mathcal{A}}:=\Pi_{2}$
+ and 
+\begin_inset Formula $V:=\Pi_{1}\otimes\mathbb{I}_{\mathcal{A}'}+\Pi_{2}\otimes P_{\mathcal{A}'}^{-1}+\Pi_{1\times2}\otimes P_{\mathcal{A}'}^{-2}$
 \end_inset
 
-
+.
+ 
 \end_layout
 
 \end_deeper
@@ -1465,6 +1571,22 @@ Why do we need to assume it is an isometry? Because the
 \end_inset
 
  must refer to 
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $U_{\swap}$
+\end_inset
+
+ is indeed an Isometry
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
