@@ -947,9 +947,9 @@ Verify if we require that
 We may restate the aforesaid discussion more symbolically as lower bounding
  the value of the following objective function: 
 \begin_inset Formula 
-\[
-F:=\min_{\rho,\{\Pi_{i}\}}\max_{V}\left[\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS}\rho^{\KCBS}\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\right]
-\]
+\begin{equation}
+F:=\min_{\rho,\{\Pi_{i}\}}\max_{V}\left[\sum_{i=1}^{5}\mathcal{F}(V\Pi_{i}\rho\Pi_{i}V^{\dagger},\Pi_{i}^{\KCBS}\rho^{\KCBS}\Pi_{i}^{\KCBS})+\mathcal{F}(V\rho V^{\dagger},\rho^{\KCBS})\right]\label{eq:fidelity}
+\end{equation}
 
 \end_inset
 
@@ -1190,6 +1190,21 @@ literal "false"
 Providing a lower bound on the fidelity from regularized measurement statistics
 \end_layout
 
+\begin_layout Itemize
+OLD Issues:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To conclude that 
+\begin_inset Formula $\sum_{k=0}^{n-1}\left|k\right\rangle \left\langle k\right|\otimes P^{-k}$
+\end_inset
+
+ is an isometry, we need to assume rank one projectors.
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\swap}{{\rm SWAP}}
@@ -1264,7 +1279,7 @@ We want
  One possible qutrit swapping unitary/circuit (a special case of the general
  qudit swapping unitary/circuit defined in [??], an article about self-testing
  Bell inequalities) may be defined as 
-\begin_inset Formula $U_{\swap}:=TUVU$
+\begin_inset Formula $S_{\swap}:=TUVU$
 \end_inset
 
  where 
@@ -1335,6 +1350,13 @@ Constructing an isometry
 \end_inset
 
  Let
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:ConstructingAnIsometry"
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1404,7 +1426,7 @@ noprefix "false"
 \end_inset
 
  and let 
-\begin_inset Formula $S_{\swap}:=TUVU$
+\begin_inset Formula $S'_{\swap}:=TUVU$
 \end_inset
 
 .
@@ -1556,21 +1578,84 @@ Define
 
 \end_deeper
 \end_deeper
-\begin_layout Itemize
-To conclude that 
-\begin_inset Formula $\sum_{k=0}^{n-1}\left|k\right\rangle \left\langle k\right|\otimes P^{-k}$
+\begin_layout Standard
+We do not prove but [**CHECK] it is known that the linear combinations required
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:ConstructingAnIsometry"
+plural "false"
+caps "true"
+noprefix "false"
+
 \end_inset
 
- is an isometry, we need to assume rank one projectors.
- 
-\end_layout
+ always exist, i.e.
+ the algorithm always succeeds at constructing 
+\begin_inset Formula $S'_{\swap}$
+\end_inset
 
-\begin_layout Standard
-Why do we need to assume it is an isometry? Because the 
+.
+ We must show that 
+\begin_inset Formula $S'_{\swap}$
+\end_inset
+
+ is in fact an isometry.
+ This is important because of the following reason.
+ Recall that our objective was to lower bound 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:fidelity"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+.
+ To this end, we said we drop the maximization over all possible 
 \begin_inset Formula $V$
 \end_inset
 
- must refer to 
+s, for a given quantum realisation 
+\begin_inset Formula $\rho,\left\{ \Pi_{i}\right\} _{i=1}^{5}$
+\end_inset
+
+ and instead insert a specific isometry 
+\begin_inset Formula $S'_{\swap}$
+\end_inset
+
+ which is a function of 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+.
+ Note that this argument for lower bounding 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:fidelity"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+ breaks if 
+\begin_inset Formula $S'_{\swap}$
+\end_inset
+
+ is not an isometry.
+ [**I AM HERE**] In fact, 
+\begin_inset Formula $P_{\mathcal{A}}$
+\end_inset
+
+ as produced by the algorithm is not necessarily unitary (viz.
+ 
+\begin_inset Formula $P_{\mathcal{A}}^{\dagger}P_{\mathcal{A}}=\mathbb{I}_{\mathcal{A}}$
+\end_inset
+
+ may not hold).
+ 
 \end_layout
 
 \begin_layout Lemma
@@ -1586,7 +1671,79 @@ status open
 
 \end_inset
 
- 
+ Let 
+\begin_inset Formula $S'_{\swap}$
+\end_inset
+
+ be the map produced by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:ConstructingAnIsometry"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+ and define 
+\begin_inset Formula $S_{\swap}$
+\end_inset
+
+ to be 
+\begin_inset Formula $S'_{\swap}$
+\end_inset
+
+ with 
+\begin_inset Formula $P_{\mathcal{A}}$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $\hat{P}_{\mathcal{A}}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\bar{\Pi}:=\Pi_{1}+\Pi_{2}+\Pi_{1\times2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $S_{\swap}$
+\end_inset
+
+ is an isometry if the following conditions hold
+\begin_inset Formula 
+\begin{align*}
+\Pi_{i}\Pi_{1\times2} & =0 & \forall i\in\{1,2\},\\
+\bar{\Pi}^{2} & =\bar{\Pi},\\
+\bar{\Pi}\sigma & =\sigma & \forall\sigma\in\{\rho,\{\Pi_{i}\}_{i=1}^{5}\}
+\end{align*}
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\begin{align*}
+\hat{P}_{\mathcal{A}}^{\dagger}\hat{P}_{\mathcal{A}} & =\mathbb{I}_{\mathcal{A}},\\
+\hat{P}_{\mathcal{A}}P_{\mathcal{A}} & \ge0.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We already have 
+\begin_inset Formula $\Pi_{1}\Pi_{2}=0$
+\end_inset
+
+ because 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+ is a quantum realisation.
+ [** INCOMPLETE]
 \end_layout
 
 \begin_layout Standard
