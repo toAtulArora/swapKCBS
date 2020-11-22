@@ -10,6 +10,7 @@
 theorems-ams
 eqs-within-sections
 figs-within-sections
+theorems-ams-extended
 \end_modules
 \maintain_unincluded_children false
 \language british
@@ -70,7 +71,7 @@ figs-within-sections
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style british
+\quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -493,6 +494,65 @@ When not IID, parallel should be more general
 Clarify the issue with the sum
 \end_layout
 
+\begin_layout Itemize
+NOTATIONAL
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Difference between a 
+\begin_inset Quotes eld
+\end_inset
+
+configuration
+\begin_inset Quotes erd
+\end_inset
+
+ and a 
+\begin_inset Quotes eld
+\end_inset
+
+realisation
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Experimental Scenario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Quantum Realisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Consider the KCBS scenario, i.e.
  an experimental scenario which is specified by the events 
@@ -818,6 +878,50 @@ Finding a lower-bound is non-trivial.
 Overall Strategy
 \end_layout
 
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+An ideal KCBS configuration
+\end_layout
+
+\end_inset
+
+Consider a three-dimensional Hilbert space spanned by the basis 
+\begin_inset Formula $\{\left|0\right\rangle ,\left|1\right\rangle ,\left|2\right\rangle \}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula 
+\[
+\left|u_{l}\right\rangle :=\cos\theta\left|0\right\rangle +\sin\theta\sin\phi_{l}\left|1\right\rangle +\sin\theta\cos\phi_{l}\left|2\right\rangle 
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\phi_{l}:=l\pi(n-1)/n$
+\end_inset
+
+ for 
+\begin_inset Formula $1\le l\le n$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula 
+\begin{align*}
+\left|\psi^{\KCBS}\right\rangle  & :=\left|0\right\rangle \\
+\Pi_{i}^{\KCBS} & :=\left|u_{i}\right\rangle \left\langle u_{i}\right|.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 TODO
 \end_layout
@@ -897,7 +1001,7 @@ note that we assume
 \begin_inset Formula $V$
 \end_inset
 
- with a particular isometry 
+ and replace it with a particular isometry 
 \begin_inset Formula $V$
 \end_inset
 
@@ -1168,23 +1272,184 @@ We want
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{align*}
-T & :=\mathbb{I}_{\mathcal{A}}\otimes\sum_{k=0}^{2}\left|-k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
-U & :=\sum_{k=0}^{2}P_{\mathcal{A}}^{k}\otimes\left|k\right\rangle \left\langle k\right|_{\mathcal{A}'}\\
-V & :=\sum_{k=0}^{2}\left|k\right\rangle \left\langle k\right|_{\mathcal{A}}\otimes P_{\mathcal{A}'}^{-k}
-\end{align*}
+\begin{align}
+T & :=\mathbb{I}_{\mathcal{A}}\otimes\sum_{k=0}^{2}\left|-\bar{k}\right\rangle \left\langle \bar{k}\right|_{\mathcal{A}'}\nonumber \\
+U & :=\sum_{k=0}^{2}P_{\mathcal{A}}^{k}\otimes\left|\bar{k}\right\rangle \left\langle \bar{k}\right|_{\mathcal{A}'}\nonumber \\
+V & :=\sum_{k=0}^{2}\left|\bar{k}\right\rangle \left\langle \bar{k}\right|_{\mathcal{A}}\otimes P_{\mathcal{A}'}^{-k}\label{eq:TUV}
+\end{align}
 
 \end_inset
 
 where 
-\begin_inset Formula $P:=\sum_{i=0}^{2}\left|k+1\mod3\right\rangle \left\langle k\right|$
+\begin_inset Formula $P:=\sum_{i=0}^{2}\left|\overline{k+1\mod3}\right\rangle \left\langle \bar{k}\right|$
 \end_inset
 
- is a translation operator.
+ is a translation operator and 
+\begin_inset Formula $\{\left|\bar{0}\right\rangle ,\left|\bar{1}\right\rangle ,\left|\bar{2}\right\rangle \}$
+\end_inset
+
+ is a basis for the qutrit space.
  We omit the proof here (for a proof see ...).
+ We express the the operators ...
+ 
+\begin_inset FormulaMacro
+\newcommand{\cross}{\text{cross}}
+{\text{cross}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Constructing an isometry
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\mathcal{A}'$
+\end_inset
+
+ be a three dimensional Hilbert space and 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ be a Hilbert space with arbitrary dimension.
+ Let 
+\begin_inset Formula $\rho,\{\Pi_{i}\}_{i=1}^{5}$
+\end_inset
+
+ be an arbitrary quantum realisation on defined on 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula $T,U,V$
+\end_inset
+
+ as in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:TUV"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+ and let 
+\begin_inset Formula $S_{\swap}:=TUVU$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\mathcal{L}^{\KCBS}:=\{\{\Pi_{i}^{\KCBS}\}_{i=1}^{5},\{\Pi_{i}^{\KCBS}\Pi_{j}^{\KCBS}\}_{i,j=1}^{5},\dots\}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{L}:=\{\{\Pi_{i}\}_{i=1}^{5},\{\Pi_{i}\Pi_{j}\}_{i,j=1}^{5}\dots\}$
+\end_inset
+
+ be the set of 
+\begin_inset Quotes bls
+\end_inset
+
+words
+\begin_inset Quotes brs
+\end_inset
+
+ formed by the KCBS projectors and those of the arbitrary quantum realisation,
+ respectively.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Translation Operator: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Express 
+\begin_inset Formula $P_{\mathcal{A}'}$
+\end_inset
+
+ as a linear combination of elements in 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $P=\sum_{l\in\mathcal{L}^{\KCBS}}\alpha_{l}l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Define 
+\begin_inset Formula $P_{\mathcal{A}}:=\sum_{l\in\mathcal{L}}\alpha_{l}l$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Basis projectors: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Define 
+\begin_inset Formula $\left|\bar{2}\right\rangle :=\cross(\left|\bar{0}\right\rangle ,\left|\bar{1}\right\rangle )$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Define 
+\begin_inset Formula $\Pi_{1\times2}:=\left|\bar{2}\right\rangle \left\langle \bar{2}\right|$
+\end_inset
+
+.
+ Express 
+\begin_inset Formula $\Pi_{1\times2}$
+\end_inset
+
+ as a linear combination of elements in 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\Pi_{1\times2}=\sum_{l\in\mathcal{L}^{\KCBS}}\beta_{l}l$
+\end_inset
+
+.
  
 \end_layout
 
+\begin_layout Enumerate
+Define 
+\begin_inset Formula $\left|\bar{0}\right\rangle \left\langle \bar{0}\right|_{\mathcal{A}}:=\Pi_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\left|\bar{1}\right\rangle \left\langle \bar{1}\right|_{\mathcal{A}}:=\Pi_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Itemize
 To conclude that 
 \begin_inset Formula $\sum_{k=0}^{n-1}\left|k\right\rangle \left\langle k\right|\otimes P^{-k}$
@@ -1192,6 +1457,14 @@ To conclude that
 
  is an isometry, we need to assume rank one projectors.
  
+\end_layout
+
+\begin_layout Standard
+Why do we need to assume it is an isometry? Because the 
+\begin_inset Formula $V$
+\end_inset
+
+ must refer to 
 \end_layout
 
 \begin_layout Standard
