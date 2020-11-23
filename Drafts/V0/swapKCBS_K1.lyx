@@ -12,7 +12,7 @@ eqs-within-sections
 figs-within-sections
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -70,7 +70,7 @@ figs-within-sections
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style british
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -109,7 +109,33 @@ Introduction
 Why self-testing
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
+Understanding the internal workings of quantum devices becomes challenging
+ and crucial with the increase in their corresponding dimensionality.
+ The task of quantum device certification is inherently demanding due to
+ the exponential scaling of Hilbert space as system size increases.
+ In a faithfully minimalistic scenario, developing confidence in the inner
+ functioning of quantum devices mandates certification schemes that require
+ minimal assumptions regarding their functioning.
+ One of the most potent methodologies to render guarantees regarding the
+ internal functioning of quantum devices solely based on experimental statistics
+, under reasonable assumptions, is self-testing.
+ The first self-testing protocol for a pair of non-communicating entangled
+ quantum devices was devised in the milestone paper by Mayers and Yao in
+ 2004, which relied on Bell nonlocality.
+ Since then, self-testing via Bell nonlocality has been exhibited for GHZ
+ states, all pure bipartite entangled states, and all multipartite entangled
+ states that admit a Schmidt decomposition.
+ The idea of self-testing has been further extended to the prepare-and-measure
+ scenario, contextuality and quantum steering.
+ For a comprehensive review of self-testing, we refer to [cite].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Subsection
 State of the art
 \end_layout
 
@@ -150,39 +176,71 @@ All bipartite entangled states can be self-tested by quantum steering |
  EPR steering
 \end_layout
 
-\begin_layout Subsubsection
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Local Self testing 
 \end_layout
 
 \begin_layout Standard
-Motivation: Device certification.
+Self-testing based on Bell nonlocality is a powerful method which allows
+ us to acquire insights concerning the inner workings of a duo of space-like
+ separated entangled devices.
+ However, for single untrusted quantum devices, self-testing based on Bell-nonlo
+cality forfeits its relevance, and one requires local self-testing schemes
+ for such cases.
+ Since Computation typically happens locally, a quantum computer is a canonical
+ example of a single quantum device.
+ This mandates the development of self-testing protocols for single untrusted
+ quantum devices.
+ The first local self-testing scheme was presented in [PRL] where the scheme
+ relied on violation of non-contextuality inequalities via qutrits.
+ Non-contextuality inequalities are linear inequalities, similar to Bell
+ inequality, the violation of which can be used to witness non-classicality.
+ The advanatage of non-contextuality inequalities over Bell inequality is
+ that it can be implemented for a single device and thus bypasses the non-commun
+ication assumption.
+ In a subsequent work [arXiv], the aforementioned scheme was generalized
+ to arbitrarily high dimension.
+ Using complexity theoretic arguments, self-testing scheme for a single
+ computationally bounded quantum device was given in [Vidick].
+ For a self-testing protocol to be of experimental relevance, the scheme
+ must be robust against experimental noise.
+ Though the self-testing schemes in [ADD] are robust, the robustness was
+ proven upto multiplicative constants and hence is not directly implementable.
 \end_layout
 
-\begin_layout Itemize
-Computation, which is usually local, it is inconvenient also less secure
- to trust another party etc.
+\begin_layout Subsection
+Contributions
 \end_layout
 
 \begin_layout Standard
-State of the art
+In this Letter, we try to address the limitations of refrence [ADD] by providing
+ the robustness curve.
+ We use semidefinite programming with moment matrices to obtain the aforemention
+ed curve.
+ This is the first ever robustness curve for a non-contextuality inequality
+ for single quantum system.
+ Furthermore, using single trapped 
+\begin_inset Formula $^{40}{\rm Ca}^{+}$
+\end_inset
+
+ ion, we provide an experimental demonstration of the local self-testing
+ scheme.
 \end_layout
 
-\begin_layout Itemize
-Vidick et al
-\end_layout
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
 
-\begin_layout Itemize
-Kishor's et al article on self-testing.
- Robustness curve was given up to multiplicative constants.
- Not directly implementable.
- 
-\end_layout
-
-\begin_layout Subsubsection
+\begin_layout Subsection
 Contextuality
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Informal quick introduction
 \end_layout
 
@@ -190,7 +248,7 @@ Informal quick introduction
 Contribution
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Address limitations of Kishor et al's article
 \end_layout
 
@@ -217,7 +275,7 @@ experimental demonstration of local self-testing
 Assumptions and Memory leakage :P
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Self testing works under the following.
 \end_layout
 
@@ -249,11 +307,11 @@ log[classical dimensions]=memory; quantum dimension = quantum memory
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Criticism:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 BQP
 \begin_inset Formula $\subseteq$
 \end_inset
@@ -263,6 +321,11 @@ PSPACE; that's fine we hope to find the exact curve to certify
 
 \begin_layout Itemize
 Poly separation or some such.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
