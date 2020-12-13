@@ -3270,7 +3270,7 @@ noprefix "false"
 
 .
  Suppose 
-\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\epsilon$
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert _{2}\le\epsilon$
 \end_inset
 
 .
