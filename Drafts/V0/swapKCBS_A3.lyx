@@ -2964,6 +2964,37 @@ We now show that every quantum behaviour can be realised as a quantum KCBS
 
 \begin_layout Standard
 The analogous statement for the classical case also holds.
+ [TODO: Kishor will fix this]
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Classical KCBS process
+\end_layout
+
+\end_inset
+
+ A KCBS process (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:KCBS-process"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+) where ....
+\begin_inset CommandInset label
+LatexCommand label
+name "def:KCBS-process-classical"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Lemma
@@ -3096,6 +3127,27 @@ noprefix "false"
 
 \begin_layout Subsection
 SDP with non-orthogonal projectors
+\end_layout
+
+\begin_layout Standard
+TODO: Atul: I may have to reformulate this part because if we relax the
+ orthogonality condition, then it is no longer clear that the resulting
+ 
+\begin_inset Quotes eld
+\end_inset
+
+isometry
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $S_{\swap}'$
+\end_inset
+
+ is in fact an isometry.
+ There are then two steps; first, we have to show that the new objective
+ (with the noisy ...).
+ 
 \end_layout
 
 \begin_layout Standard

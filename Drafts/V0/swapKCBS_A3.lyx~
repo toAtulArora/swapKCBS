@@ -3099,7 +3099,24 @@ SDP with non-orthogonal projectors
 \end_layout
 
 \begin_layout Standard
+TODO: Atul: I may have to reformulate this part because if we relax the
+ orthogonality condition, then it is no longer clear that the resulting
+ 
+\begin_inset Quotes eld
+\end_inset
 
+isometry
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $S_{\swap}'$
+\end_inset
+
+ is in fact an isometry.
+ There are then two steps; first, we have to show that the new objective
+ (with the noisy ...).
+ 
 \end_layout
 
 \begin_layout Standard
