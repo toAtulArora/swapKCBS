@@ -3141,11 +3141,11 @@ noprefix "false"
 
 .
  It is easy to see that 
-\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\left\Vert [\Pi_{i}^{\exp},\Pi_{j}^{\exp}\right\Vert $
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert _{2}\le\left\Vert [\Pi_{i}^{\exp},\Pi_{j}^{\exp}\right\Vert _{2}$
 \end_inset
 
  by using the triangle inequality and noting that 
-\begin_inset Formula $\left\Vert \Pi_{i}^{\exp}\right\Vert \le1$
+\begin_inset Formula $\left\Vert \Pi_{i}^{\exp}\right\Vert _{2}\le1$
 \end_inset
 
  (and the norm we use is the one induced by the vector norm).
@@ -3164,7 +3164,7 @@ noprefix "false"
 \end_inset
 
  is replaced with 
-\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\epsilon$
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert _{2}\le\epsilon$
 \end_inset
 
 .
@@ -3270,7 +3270,7 @@ noprefix "false"
 
 .
  Suppose 
-\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\epsilon$
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert _{2}\le\epsilon$
 \end_inset
 
 .
