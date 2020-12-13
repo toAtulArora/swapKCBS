@@ -7,7 +7,7 @@
 \textclass article
 \begin_preamble
 %\newref{thm}{name=theorem~,Name=Theorem~,names=theorems~,Names=Theorems~}
-%\newref{def}{name=definition~,Name=Definition~,names=definitions~,Names=Definitions~}
+\newref{def}{name=definition~,Name=Definition~,names=definitions~,Names=Definitions~}
 %\newref{cor}{name=corollary~,Name=Corollary~,names=corollaries~,Names=Corollaries~}
 \newref{lem}{name=lemma~,Name=Lemma~,names=lemmas~,Names=Lemmas~}
 %\newref{claim}{name=claim~,Name=Claim~,names=claims~,Names=Claims~}
@@ -15,7 +15,8 @@
 %\newref{subsec}{name=subsection~,Name=Subsection~,names=subsections~,Names=Subsections~}
 %\newref{prop}{name=proposition~,Name=Proposition~,names=propositions~,Names=Propositions~}
 %\newref{conj}{name=conjecture~,Name=Conjecture~,names=conjectures~,Names=Conjectures~}
-\newref{assu}{name=assumption~,Name=Assumption~,names=assumptions~,Names=Assumptions~}
+%\newref{conj}{name=conjecture~,Name=Conjecture~,names=conjectures~,Names=Conjectures~}
+\newref{rem}{name=remark~,Name=Remark~,names=remarks~,Names=Remarks~}
 \newref{eq}{name=equation~,Name=Equation~,names=equations~,Names=Equations~}
 \newref{alg}{name=algorithm~,Name=Algorithm~,names=algorithms~,Names=Algorithms~}
 \end_preamble
@@ -2003,6 +2004,12 @@ The SDP for lower bounding the fidelity of a given realisation with the
 \end_inset
 
  The algorithm proceeds in two parts.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:The-algorithm"
+
+\end_inset
+
  
 \begin_inset Newline newline
 \end_inset
@@ -2240,7 +2247,7 @@ indexed by letters
 
 \begin_layout Itemize
 whose matrix elements are given by 
-\begin_inset Formula $\Gamma^{(k)}(X)_{w,w'}=\left\langle \psi\right|w^{\dagger}Xw'\left|\psi\right\rangle $
+\begin_inset Formula $\Gamma^{(k)}(X)_{v,w}=\left\langle \psi\right|v^{\dagger}Xw\left|\psi\right\rangle $
 \end_inset
 
 , 
@@ -2538,6 +2545,10 @@ KISHOR: Move these things to the introduction/preliminaries as needed; I
  am just writing these here to be consistent and clear.
 \end_layout
 
+\begin_layout Subsection
+The Ideal Case
+\end_layout
+
 \begin_layout Standard
 We revisit the notion of exclusivity.
  Recall that we defined exclusivity at the operational level—at the level
@@ -2567,7 +2578,7 @@ We revisit the notion of exclusivity.
 
 , formed by treating the events as vertices and their exclusivity relations
  as edges.
- We had defined a behaviour as a map from events to probabilities such that
+ We defined a behaviour as a map from events to probabilities such that
  
 \begin_inset Formula $\Pr[e_{i}]+\Pr[e_{j}]\le1$
 \end_inset
@@ -2577,11 +2588,24 @@ We revisit the notion of exclusivity.
 \end_inset
 
 .
- We had defined non-contextual behaviours as those which admit a non-contextual
+ We defined non-contextual behaviours as those which admit a non-contextual
  completion (details ...).
- We had defined a quantum behaviour to be one which can be realised using
- a quantum state and measurements.
- More precisely, we required that there exist projectors 
+ We defined a quantum behaviour to be one which can be realised using a
+ quantum state and measurements.
+ 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Quantum Behaviour
+\end_layout
+
+\end_inset
+
+ There exist projectors 
 \begin_inset Formula $\Pi_{i}$
 \end_inset
 
@@ -2614,11 +2638,19 @@ We revisit the notion of exclusivity.
 \end_inset
 
 .
- This we already knew.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "def:quantumBehaviour"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Let us now restrict to our case of interest, the pentagonal exclusivity
+This we already knew.
+ Let us now restrict to our case of interest, the pentagonal exclusivity
  graph, i.e.
  the 
 \begin_inset Formula $5$
@@ -2631,6 +2663,19 @@ Let us now restrict to our case of interest, the pentagonal exclusivity
  (only its existence is supposed).
  We now describe, again at an operational level, one possible process which
  corresponds to the pentagonal exclusivity graph.
+ 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+(Operational) KCBS process
+\end_layout
+
+\end_inset
+
  Consider a preparation 
 \begin_inset Formula $\rho$
 \end_inset
@@ -2677,7 +2722,39 @@ e_{i}:=(1,0|\Pi_{i}^{\exp},\Pi_{i+1}^{\exp})
 \end_inset
 
  are measured.
- Note, for instance, that 
+ We call this process the 
+\emph on
+KCBS process
+\emph default
+.
+ Denote by 
+\begin_inset Formula $\Pr[e_{i}]$
+\end_inset
+
+ the probability assigned to the event 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ by an appropriate probabilistic model and call 
+\begin_inset Formula $(\Pr[e_{i}])_{i}$
+\end_inset
+
+ the 
+\emph on
+behaviour
+\emph default
+ corresponding to the KCBS process.
+\begin_inset CommandInset label
+LatexCommand label
+name "def:KCBS-process"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Note, for instance, that 
 \begin_inset Formula $e_{1}$
 \end_inset
 
@@ -2710,19 +2787,92 @@ e_{i}:=(1,0|\Pi_{i}^{\exp},\Pi_{i+1}^{\exp})
 \end_layout
 
 \begin_layout Standard
-To obtain 
-\begin_inset Formula $\Pr[e_{i}]$
+It is not hard to see (as we shall explicitly observe) that when this KCBS
+ process is governed by quantum theory, the resulting behaviour is just
+ the quantum behaviour for the pentagonal exclusivity graph.
+ We formally define quantum KCBS processes for clarity and state the aforementio
+ned as a lemma.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Quantum KCBS process
+\end_layout
+
 \end_inset
 
- we first suppose that the process is governed by quantum mechanics.
- We can assume, without loss of generality, that the measurements are projective
- (due to Naimark's theorem) and denote the projectors using the same symbol
+ A KCBS process (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:KCBS-process"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+) where quantum theory governs the probabilities, 
+\begin_inset Formula $\{\Pi_{i}^{\exp}\}_{i}$
+\end_inset
+
+ are projectors (not necessarily rank 1) and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is a density matrix both defined on an arbitrary but fixed Hilbert space.
+\begin_inset CommandInset label
+LatexCommand label
+name "def:KCBS-process-quantum"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+We could assume, without loss of generality, that the measurements are projectiv
+e (due to Naimark's theorem).
+ However, even then, one could not deduce that the 
+\begin_inset Formula $\Pr(1,1|\Pi_{1}^{\exp},\Pi_{1}^{\exp})=\tr(\Pi_{1}^{\exp}\Pi_{1}^{\exp}\rho\Pi_{1}^{\exp}\Pi_{1}^{\exp})$
+\end_inset
+
+ because this would, in particular, entail that the measurement is always
+ repeatable which it needn't be.
+ The theorem holds, but only for one measurement; not sequential measurements
+ as we require.
+ Thus, the quantum KCBS process as stated, is not the most general quantum
+ realisation of the KCBS process.
+ In this article, we make this assumption and leave its relaxation to future
+ work.
  
-\begin_inset Formula $\{\Pi_{i}^{\exp}\}_{i=1}^{5}$
+\begin_inset CommandInset label
+LatexCommand label
+name "rem:projectorsNaimarkInsufficient"
+
 \end_inset
 
-.
- Then, we can define 
+
+\end_layout
+
+\begin_layout Lemma
+The set of behaviours of quantum KCBS processes equals the set of quantum
+ behaviours for the pentagonal exclusivity graph.
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:behaviourKCBSequalsQuantumBehaviour"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We start with showing that every behaviour of a quantum KCBS process can
+ be cast as a quantum behaviour for the pentagonal exclusivity graph.
+ Define 
 \begin_inset Formula 
 \[
 \Pi_{i}:=\Pi_{i}^{\exp}(\mathbb{I}-\Pi_{i+1}^{\exp})\Pi_{i}^{\exp}
@@ -2731,6 +2881,14 @@ To obtain
 \end_inset
 
 so that 
+\begin_inset Formula $(\Pi_{i})_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\rho$
+\end_inset
+
+ define a quantum behaviour such that 
 \begin_inset Formula 
 \[
 \Pr[e_{i}]=\tr[\rho\Pi_{i}]
@@ -2750,49 +2908,604 @@ so that
 \end_inset
 
 because 
-\begin_inset Formula $[\Pi_{1},\Pi_{2}]=0$
+\begin_inset Formula $[\Pi_{1}^{\exp},\Pi_{2}^{\exp}]=0$
 \end_inset
 
- as the measurements are compatible.
+ (since the measurements are compatible).
+ 
+\end_layout
+
+\begin_layout Proof
+We now show that every quantum behaviour can be realised as a quantum KCBS
+ process.
+ Suppose the quantum behaviour is defined using 
+\begin_inset Formula $\left(\Pi_{i}\right)_{i},\rho$
+\end_inset
+
+ and let 
+\begin_inset Formula $\Pi_{i}^{\exp}:=\Pi_{i}$
+\end_inset
+
+.
+ It follows that 
+\begin_inset Formula $(\Pi_{i}^{\exp})_{i},\rho$
+\end_inset
+
+ define a quantum KCBS process because 
+\begin_inset Formula $[\Pi_{i}^{\exp},\Pi_{j}^{\exp}]=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $(i,j)\in E(G)$
+\end_inset
+
+ (since 
+\begin_inset Formula $\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+) where 
+\begin_inset Formula $G$
+\end_inset
+
+ is the pentagonal graph and 
+\begin_inset Formula $\tr(\rho\Pi_{i}^{\exp}(\mathbb{I}-\Pi_{i}^{\exp})\Pi_{i}^{\exp})=\tr(\rho\Pi_{i}^{\exp})=\Pr[e_{i}]$
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-We discuss things at the following three levels of description, namely
-\end_layout
+\begin_inset Separator plain
+\end_inset
 
-\begin_layout Itemize
-operational (theory independent)—we speak of preparations and operations
- (measurements are special cases with more than one outcome)
-\end_layout
 
-\begin_layout Itemize
-device independent with extra assumptions 
-\end_layout
-
-\begin_layout Itemize
-quantum description.
 \end_layout
 
 \begin_layout Standard
-Recall from Section ??, two events 
-\begin_inset Formula $e_{1}$
+The analogous statement for the classical case also holds.
+\end_layout
+
+\begin_layout Lemma
+The set of behaviours of classical KCBS processes equals the set of non-contextu
+al behaviours for the pentagonal exclusivity graph.
+\end_layout
+
+\begin_layout Proof
+Idea: TODO: Kishor has to complete this; I hope it is trivial
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $[\Pi_{i}^{\exp},\Pi_{j}^{\exp}]=0$
 \end_inset
 
- and 
-\begin_inset Formula $e_{2}$
+ for all 
+\begin_inset Formula $i,j\in V(G)$
 \end_inset
 
- are exclusive if there is a measurement for which they correspond to different
- outcomes.
- Suppose we define 
+; 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ is arbitrary.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $\Pi_{i}\left|\psi\right\rangle =\left|\psi\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+To summarise, we defined the KCBS process to bridge the gap between the
+ exclusivity graph approach and the experiment being performed in the lab.
+ Note that both are, initially, defined at the operational level.
+ We saw that they give rise to the same set of classical and quantum behaviours.
+ The advantage of defining the KCBS process is two-fold.
+ (1) It moves us closer to a device independent description and, as we shall
+ see, (2) it facilitates the handling of experimental imperfections insofar
+ as the enforcement of the underlying assumptions is concerned.
+ [TODO: swap 1 and 2] It also clarifies that the fidelity we calculate is
+ for the abstract projectors 
+\begin_inset Formula $(\Pi_{i})_{i}$
+\end_inset
+
+ which are related to, but not exactly equal to, the projectors 
+\begin_inset Formula $(\Pi_{i}^{\exp})_{i}$
+\end_inset
+
+ which model the quantum KCBS process, i.e.
+ the experiment (under the sharpness assumption; see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "rem:projectorsNaimarkInsufficient"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Experimental Imperfections
 \end_layout
 
 \begin_layout Standard
-We discuss things at two levels of description: (a) device/theory independent,
- (b) abstract quantum description (of the device etc).
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+TODO: Do we do both normal order and reverse order? In the experiment, one
+ measures three.
+\end_layout
+
+\begin_layout Plain Layout
+SDP for non-orthogonal measurements
+\end_layout
+
+\end_inset
+
+Two issues can plague an experimental realisation of a quantum KCBS process
+ (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:KCBS-process-quantum"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+).
+ First, as already alluded to in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "rem:projectorsNaimarkInsufficient"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+, the measurements may not be exactly repeatable which means that one cannot
+ assume them to be projectors.
+ In this work, we do not address this problem.
+ Second, the measurements may not be exactly compatible, which may manifest
+ as 
+\begin_inset Formula $p(a,b|x,y)$
+\end_inset
+
+ being only approximately equal to 
+\begin_inset Formula $p(b,a|y,x)$
+\end_inset
+
+.
+ In the following, we discuss one way of handling this imperfection.
  
 \end_layout
+
+\begin_layout Subsection
+SDP with non-orthogonal projectors
+\end_layout
+
+\begin_layout Standard
+Suppose we are given a quantum KCBS process (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:KCBS-process-quantum"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+) and to it we associate a quantum behaviour (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:quantumBehaviour"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+) as in the proof of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:behaviourKCBSequalsQuantumBehaviour"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+, i.e.
+ we identify 
+\begin_inset Formula $\Pi_{i}=\Pi_{i}^{\exp}(\mathbb{I}-\Pi_{j}^{\exp})\Pi_{i}^{\exp}$
+\end_inset
+
+.
+ We saw (again in the proof) that 
+\begin_inset Formula $[\Pi_{i}^{\exp},\Pi_{j}^{\exp}]=0\implies\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+.
+ It is easy to see that 
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\left\Vert [\Pi_{i}^{\exp},\Pi_{j}^{\exp}\right\Vert $
+\end_inset
+
+ by using the triangle inequality and noting that 
+\begin_inset Formula $\left\Vert \Pi_{i}^{\exp}\right\Vert \le1$
+\end_inset
+
+ (and the norm we use is the one induced by the vector norm).
+ We now lower bound the result of the SDP in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:The-algorithm"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+ when the requirement 
+\begin_inset Formula $\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+ is replaced with 
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\epsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Let 
+\begin_inset Formula $F_{\epsilon}(c)$
+\end_inset
+
+ be the output of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:The-algorithm"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+ where 
+\begin_inset Quotes eld
+\end_inset
+
+Evaluation, part 2
+\begin_inset Quotes erd
+\end_inset
+
+ (the SDP part) is changed as follows.
+\end_layout
+
+\begin_layout Itemize
+The first equality constraint, 
+\begin_inset Formula $\Gamma^{(k)}(\mathbb{I})_{v,w}=\Gamma^{(k)}(\mathbb{I})_{v',w'}$
+\end_inset
+
+ is imposed when 
+\begin_inset Formula $v^{\dagger}w=v^{\prime\dagger}w'$
+\end_inset
+
+ as stated except that we do not assume 
+\begin_inset Formula $\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Similarly, the second constraint, 
+\begin_inset Formula $\Gamma^{(k)}(\hat{P}_{\mathcal{A}}P_{\mathcal{A}})_{v,w}=\Gamma^{(k)}(\hat{P}_{\mathcal{A}}P_{\mathcal{A}})_{v',w'}$
+\end_inset
+
+ is also imposed when 
+\begin_inset Formula $v^{\dagger}\hat{P}_{\mathcal{A}}P_{\mathcal{A}}w=v^{\prime\dagger}\hat{P}_{\mathcal{A}}P_{\mathcal{A}}w'$
+\end_inset
+
+ as stated except that we do not assume 
+\begin_inset Formula $\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+Let 
+\begin_inset Formula $F_{\text{noiseless}}(c)$
+\end_inset
+
+ be the output of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:The-algorithm"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+ on the input 
+\begin_inset Formula $c$
+\end_inset
+
+ and let 
+\begin_inset Formula $F_{\epsilon}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now obtain an expression for ...
+ [** I am here **] 
+\end_layout
+
+\begin_layout Subsection
+Towards a device independent perspective
+\end_layout
+
+\begin_layout Standard
+We attempt a rephrasing of the KCBS process in a device independent language.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/KCBS_device.png
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A KCBS Device
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-KCBS-Device"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/KCBS_device_bell_like.png
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bell as a special case; allows for direct enforcement of the assumptions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+A KCBS Device
+\end_layout
+
+\end_inset
+
+ An (
+\begin_inset Formula $\epsilon,\delta$
+\end_inset
+
+)–KCBS Device has three parts.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+(i)
+\end_layout
+
+\end_inset
+
+Input module (this is supposed to correspond to the preparation 
+\begin_inset Formula $\rho$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+(ii)
+\end_layout
+
+\end_inset
+
+Reader modules labelled 
+\begin_inset Formula ${\rm X}1,{\rm X}2\dots{\rm X}5,{\rm Y}1,{\rm Y2},\dots{\rm Y}5$
+\end_inset
+
+ which when applied on an input module, output 
+\begin_inset Formula $0/1$
+\end_inset
+
+ (these correspond to the measurements 
+\begin_inset Formula $\left\{ \Pi_{i}\right\} _{i=1}^{5}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The device takes as input an ordered pair 
+\begin_inset Formula $(x,y)\in\{1,2,\dots5\}\times\{1,2\dots5\}$
+\end_inset
+
+ and returns two ordered bits 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ generated by the following procedure.
+\end_layout
+
+\begin_layout Enumerate
+The input module read using the reader module labelled 
+\begin_inset Formula $Xx$
+\end_inset
+
+ and its output is returned as 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The input module is subsequently read using the reader module labelled 
+\begin_inset Formula $Yy$
+\end_inset
+
+ and its output is returned as 
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Denote by 
+\begin_inset Formula $p(a,b|x,y)$
+\end_inset
+
+ the probability (over identical copies of the device) of obtaining the
+ output 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ given 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ as the input.
+ The device satisfies, what we call the 
+\begin_inset Formula $(\epsilon,\delta)$
+\end_inset
+
+ condition, i.e.
+ 
+\begin_inset Formula 
+\begin{align*}
+\left|p(a,b|x,y)-p(b,a|y,x)\right| & \le\epsilon\quad\forall\:a,b\in\{0,1\}\quad\forall\:x,y\in\{1,2\dots5\}\\
+\left|p(a,a|x,x)-p(a|x)\right| & \le\delta\quad\forall\:a\in\{0,1\}\quad\forall x\in\{1,2\dots5\}
+\end{align*}
+
+\end_inset
+
+
+\emph on
+for all
+\emph default
+ possible input modules.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+A few remarks are in order.
+ This definition is not very useful from a device independent point of view
+ as it is infeasible to imagine that all possible input modules are tested.
+ Further, we require a device independent condition which, in quantum theory,
+ should reduce to the requirement that 
+\begin_inset Formula $(\Pi_{i}^{\exp})_{i}$
+\end_inset
+
+ in fact behave like measurements and in the classical case, should reduce
+ to the requirement that 
+\begin_inset Formula $\left(\Pi_{i}^{\exp}\right)_{i}$
+\end_inset
+
+ do not influence the state 
+\begin_inset Formula $\rho=\left|\psi\right\rangle \left\langle \psi\right|$
+\end_inset
+
+ being measured (we can then take convex combinations of these states).
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Subsection
 Device Independent description
@@ -2867,7 +3580,7 @@ The device has no memory.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status collapsed
 
@@ -2882,7 +3595,6 @@ exclusivity
 
  may be respected in an experiment and yet the measurement statistic might
  correspond to non-orthogonal measurements.
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3070,7 +3782,6 @@ Returning to our discussion, for instance, one possibility is to measure
  as it makes the role of context clear and it applies to both the exclusivity
  and compatibility view.
  [Shouldn't there be an analogous expression for the compatibility view?]
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3101,13 +3812,9 @@ Ideally, we wanted to find the expectation of the KCBS operator,
 
 \end_layout
 
-\begin_layout Subsection
-SDP for non-orthogonal measurements
-\end_layout
+\end_inset
 
-\begin_layout Standard
-TODO: Do we do both normal order and reverse order? In the experiment, one
- measures three.
+
 \end_layout
 
 \begin_layout Section
