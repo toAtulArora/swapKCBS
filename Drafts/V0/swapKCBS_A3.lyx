@@ -3171,8 +3171,15 @@ noprefix "false"
 \end_layout
 
 \begin_layout Definition
-Let 
-\begin_inset Formula $F_{\epsilon}(c)$
+L
+\begin_inset CommandInset label
+LatexCommand label
+name "def:nonOSDP"
+
+\end_inset
+
+et 
+\begin_inset Formula $F_{\text{nonO}}(c)$
 \end_inset
 
  be the output of 
@@ -3193,7 +3200,7 @@ Evaluation, part 2
 \begin_inset Quotes erd
 \end_inset
 
- (the SDP part) is changed as follows.
+ (the SDP part) is changed as follows (by non-O we mean non-orthogonal).
 \end_layout
 
 \begin_layout Itemize
@@ -3245,6 +3252,25 @@ noprefix "false"
 
  on the input 
 \begin_inset Formula $c$
+\end_inset
+
+ and let 
+\begin_inset Formula $F_{\text{nonO}}(c)$
+\end_inset
+
+ be as described in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:nonOSDP"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $\left\Vert \Pi_{i}.\Pi_{j}\right\Vert \le\epsilon$
 \end_inset
 
 .

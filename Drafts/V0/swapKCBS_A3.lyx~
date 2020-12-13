@@ -3171,8 +3171,15 @@ noprefix "false"
 \end_layout
 
 \begin_layout Definition
-Let 
-\begin_inset Formula $F_{\epsilon}(c)$
+L
+\begin_inset CommandInset label
+LatexCommand label
+name "def:nonOSDP"
+
+\end_inset
+
+et 
+\begin_inset Formula $F_{\text{nonO}}(c)$
 \end_inset
 
  be the output of 
@@ -3193,11 +3200,39 @@ Evaluation, part 2
 \begin_inset Quotes erd
 \end_inset
 
- (the SDP part) is changed as follows.
+ (the SDP part) is changed as follows (by non-O we mean non-orthogonal).
 \end_layout
 
 \begin_layout Itemize
-The first equality constraint is replaced with 
+The first equality constraint, 
+\begin_inset Formula $\Gamma^{(k)}(\mathbb{I})_{v,w}=\Gamma^{(k)}(\mathbb{I})_{v',w'}$
+\end_inset
+
+ is imposed when 
+\begin_inset Formula $v^{\dagger}w=v^{\prime\dagger}w'$
+\end_inset
+
+ as stated except that we do not assume 
+\begin_inset Formula $\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Similarly, the second constraint, 
+\begin_inset Formula $\Gamma^{(k)}(\hat{P}_{\mathcal{A}}P_{\mathcal{A}})_{v,w}=\Gamma^{(k)}(\hat{P}_{\mathcal{A}}P_{\mathcal{A}})_{v',w'}$
+\end_inset
+
+ is also imposed when 
+\begin_inset Formula $v^{\dagger}\hat{P}_{\mathcal{A}}P_{\mathcal{A}}w=v^{\prime\dagger}\hat{P}_{\mathcal{A}}P_{\mathcal{A}}w'$
+\end_inset
+
+ as stated except that we do not assume 
+\begin_inset Formula $\Pi_{i}.\Pi_{j}=0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Lemma
@@ -3217,6 +3252,20 @@ noprefix "false"
 
  on the input 
 \begin_inset Formula $c$
+\end_inset
+
+ and let 
+\begin_inset Formula $F_{\text{nonO}}(c)$
+\end_inset
+
+ be as described in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:nonOSDP"
+plural "false"
+caps "true"
+noprefix "false"
+
 \end_inset
 
 .
