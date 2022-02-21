@@ -1,0 +1,28 @@
+1¡¢p_lms, record the measured probablity of "brignt" state, for each theta, observable Ai, 9 initial state is prepared,
+probablity in each case is listed in a row;
+the rows arranged in such a sequence:
+T48A1S1 T48A1S2 T48A1S3 T48A1S4 T48A1S5 T48A1S6 T48A1S7 T48A1S8 T48A1S9
+T48A2S1
+T48A3S1
+T48A4S1
+T48A5S1
+T46.5A1S1
+T46.5A2S1
+T46.5A3S1
+T46.5A4S1
+T46.5A5S1
+T46A1S1
+T46A2S1
+T46A3S1
+T46A4S1
+T46A5S1
+T45A1S1
+T45A2S1
+T45A3S1
+T45A4S1
+T45A5S1
+T45A1S1
+
+2¡¢MeasuredMxTyRz, MeasuredMxTyIz record the real part and image part of the construsted measured POVM operator.
+x is the index of observable, y is the theta, z is the "bright" part 0, or "dark" part 1. 
+IdealMx record the ideal POVM operator of the x-th observable.
